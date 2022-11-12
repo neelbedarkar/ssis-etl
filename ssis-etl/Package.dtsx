@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{BDFC3D74-B37F-4B69-9D6E-7EC6CD1DFF05}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{0BF24E2B-E6C2-437F-A41F-F6304A2C871E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1431,6 +1431,79 @@
               version="1">
               <components>
                 <component
+                  refId="Package\Loop for UPC\UPC Data Flow Task\Add Filename"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add Filename"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output].Columns[FileName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">@[User::UPC_Filename]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[User::UPC_Filename]</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -1534,6 +1607,14 @@
                           cachedName="NITEM"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[NITEM]" />
+                        <inputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].Columns[FileName]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="FileName"
+                          externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Output].Columns[FileName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1588,6 +1669,83 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Convert the Filename Data Type"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Inputs[Data Conversion Input].Columns[FileName]"
+                          cachedDataType="wstr"
+                          cachedName="FileName"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output].Columns[FileName]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Output].Columns[FileName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Output].Columns[FileName]"
+                          name="FileName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output].Columns[FileName]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2053,13 +2211,23 @@
               </components>
               <paths>
                 <path
+                  refId="Package\Loop for UPC\UPC Data Flow Task.Paths[Data Conversion Output]"
+                  endId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Loop for UPC\UPC Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Error Output]"
                   endId="Package\Loop for UPC\UPC Data Flow Task\File Read Error Destination.Inputs[Flat File Destination Input]"
                   name="Flat File Source Error Output"
                   startId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Error Output]" />
                 <path
                   refId="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
-                  endId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input]"
+                  endId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Inputs[Derived Column Input]"
                   name="Flat File Source Output"
                   startId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output]" />
                 <path
@@ -2288,11 +2456,11 @@
     design-time-name="Package\Loop for UPC\UPC Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="145,42"
           Id="Package\Loop for UPC\UPC Data Flow Task\UPC File Read"
-          TopLeft="361,112" />
+          TopLeft="385,106" />
         <NodeLayout
           Size="226,42"
           Id="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination"
@@ -2300,61 +2468,139 @@
         <NodeLayout
           Size="176,42"
           Id="Package\Loop for UPC\UPC Data Flow Task\Category Table Load"
-          TopLeft="326,281.941176063049" />
+          TopLeft="259,328.941176063049" />
         <NodeLayout
           Size="205,42"
           Id="Package\Loop for UPC\UPC Data Flow Task\File Read Error Destination"
           TopLeft="694,281" />
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="414,323.941176063049">
+          TopLeft="435,349.941176063049">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="352,57.058823936951"
+              EndConnector="218,52.058823936951"
               Start="0,0"
-              End="352,49.558823936951">
+              End="210.5,52.058823936951">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5294119684755" />
+                    End="105,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5294119684755"
-                    Point2="0,28.5294119684755"
-                    Point3="4,28.5294119684755" />
+                    Point1="105,0"
+                    Point2="109,0"
+                    Point3="109,4" />
                   <mssgle:LineSegment
-                    End="348,28.5294119684755" />
+                    End="109,48.058823936951" />
                   <mssgle:CubicBezierSegment
-                    Point1="348,28.5294119684755"
-                    Point2="352,28.5294119684755"
-                    Point3="352,32.5294119684755" />
+                    Point1="109,48.058823936951"
+                    Point2="109,52.058823936951"
+                    Point3="113,52.058823936951" />
                   <mssgle:LineSegment
-                    End="352,49.558823936951" />
+                    End="210.5,52.058823936951" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="102.79109375,33.5294119684755,146.4178125,11.43359375"
+              BoundingBox="35.79109375,-17.43359375,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="412.333333333333,154">
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Error Output]"
+          TopLeft="457.5,148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,127.941176063049"
+              EndConnector="339,133"
               Start="0,0"
-              End="0,120.441176063049">
+              End="339,125.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,120.441176063049" />
+                    End="0,62.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.5"
+                    Point2="0,66.5"
+                    Point3="4,66.5" />
+                  <mssgle:LineSegment
+                    End="335,66.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="335,66.5"
+                    Point2="339,66.5"
+                    Point3="339,70.5" />
+                  <mssgle:LineSegment
+                    End="339,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="105.87361328125,71.5,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\Add Filename"
+          TopLeft="122,108" />
+        <EdgeLayout
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="385,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120,0"
+              Start="0,0"
+              End="-112.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-112.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type"
+          TopLeft="221,224" />
+        <EdgeLayout
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="193.5,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143,74"
+              Start="0,0"
+              End="143,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="139,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139,37"
+                    Point2="143,37"
+                    Point3="143,41" />
+                  <mssgle:LineSegment
+                    End="143,66.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2364,39 +2610,37 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Error Output]"
-          TopLeft="456.333333333333,154">
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="336.5,266">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="340.166666666667,127"
+              EndConnector="10.5,62.941176063049"
               Start="0,0"
-              End="340.166666666667,119.5">
+              End="10.5,55.441176063049">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.6316507503411" />
+                    End="0,27.4705880315245" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.6316507503411"
-                    Point2="0,51.6316507503411"
-                    Point3="4,51.6316507503411" />
+                    Point1="0,27.4705880315245"
+                    Point2="0,31.4705880315245"
+                    Point3="4,31.4705880315245" />
                   <mssgle:LineSegment
-                    End="336.166666666667,51.6316507503411" />
+                    End="6.5,31.4705880315245" />
                   <mssgle:CubicBezierSegment
-                    Point1="336.166666666667,51.6316507503411"
-                    Point2="340.166666666667,51.6316507503411"
-                    Point3="340.166666666667,55.6316507503411" />
+                    Point1="6.5,31.4705880315245"
+                    Point2="10.5,31.4705880315245"
+                    Point3="10.5,35.4705880315245" />
                   <mssgle:LineSegment
-                    End="340.166666666667,119.5" />
+                    End="10.5,55.441176063049" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="106.456946614583,56.6316507503411,127.2527734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
