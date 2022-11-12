@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{95528D59-8464-48E1-B997-03934A5F822A}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{BDFC3D74-B37F-4B69-9D6E-7EC6CD1DFF05}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -116,7 +116,7 @@
           DTS:LocaleID="1033"
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
+          DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
           DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\file_read_log.csv.txt">
           <DTS:FlatFileColumns>
@@ -126,7 +126,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Flat File Source Error Output Column"
-              DTS:DTSID="{4E180510-46F4-40BE-815E-1F8465820BD2}"
+              DTS:DTSID="{ED752C03-CC98-444E-9BF4-C55CAC62C3FC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -134,7 +134,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{01E19668-6B6A-45B7-B69B-12F15D0BBD2A}"
+              DTS:DTSID="{D55EF685-6221-4EF2-89C7-7E9A18B4DF36}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -142,7 +142,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{5A95DF80-65AD-4F75-B400-AE08BCE33D8A}"
+              DTS:DTSID="{2918A57A-B7BC-4AF2-9275-C359DA145821}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -279,8 +279,9 @@
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
-          DTS:CodePage="1252">
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:AlwaysCheckForRowDelimiters="False">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -289,7 +290,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="COM_CODE"
-              DTS:DTSID="{CD409A9F-BA97-452D-B4FF-F77F8AD8B057}"
+              DTS:DTSID="{C6AEFFDE-9D9E-46E6-996A-D186550686E3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -298,7 +299,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="UPC"
-              DTS:DTSID="{70BA8B37-41D3-4AF4-B884-3CF5CF68065B}"
+              DTS:DTSID="{7B53A349-F3E6-4A3D-8366-7E2E66778E05}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -307,7 +308,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DESCRIP"
-              DTS:DTSID="{B8F57FD2-E8D8-4305-8A57-BF6EEEB4BDB7}"
+              DTS:DTSID="{E025B0B3-3C9D-4EE4-9D2E-F6B67906ED88}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -316,7 +317,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SIZE"
-              DTS:DTSID="{E68FD3EB-C1BF-43C7-A4A7-782C7E8A7010}"
+              DTS:DTSID="{9E10E2FD-A80F-4AA1-A550-07730EDA4F5E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -325,7 +326,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CASE"
-              DTS:DTSID="{82C4D9F8-FB06-478B-B667-A7837FCEAF27}"
+              DTS:DTSID="{058BC315-17C6-4931-9962-37FF9A7DBDC8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -334,7 +335,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NITEM"
-              DTS:DTSID="{F4215472-939C-46D6-B75D-3C42E6EB33D4}"
+              DTS:DTSID="{798721FE-C22D-46F7-B4BA-BD034043F2C9}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -378,8 +379,9 @@
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
-          DTS:CodePage="1252">
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:AlwaysCheckForRowDelimiters="False">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -388,7 +390,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="STORE"
-              DTS:DTSID="{E28CB1FF-D526-4D33-999B-FA86144ADE91}"
+              DTS:DTSID="{769E21CB-35C2-43F9-9AB0-4116F39A87CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -397,7 +399,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="UPC"
-              DTS:DTSID="{CCE9C297-9051-4037-B2CC-97FBB888EB96}"
+              DTS:DTSID="{23B5C618-CDBC-4B16-B4BE-0B029F72A4C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -406,7 +408,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="WEEK"
-              DTS:DTSID="{A60C5B24-2AB3-4DA6-B4AA-86A900C79D33}"
+              DTS:DTSID="{B833635E-7333-45A6-825A-C80082D50E2D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -415,7 +417,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MOVE"
-              DTS:DTSID="{FE1F7053-983E-4BE2-8494-5991E2516051}"
+              DTS:DTSID="{8E78C622-DBF9-4739-AD6F-7397AB527EC8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -424,7 +426,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="QTY"
-              DTS:DTSID="{86099B98-6D2A-4256-8ABC-8AA0BF631555}"
+              DTS:DTSID="{B1B7F1C9-601D-450A-BC05-B2579F34ADA6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -433,7 +435,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PRICE"
-              DTS:DTSID="{2E945E84-7AB4-4891-B5E4-465582ABA9D8}"
+              DTS:DTSID="{10F5F616-51B1-4DAD-B0CC-7C5D6A5D50F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -442,7 +444,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SALE"
-              DTS:DTSID="{10C81025-39D8-42A6-AF4B-E7851A2FD84B}"
+              DTS:DTSID="{14EFAC8D-09BC-45D2-96EB-F573368983F2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -451,7 +453,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PROFIT"
-              DTS:DTSID="{6DEB7F03-DD7D-4D0C-ADE0-2922D17B1727}"
+              DTS:DTSID="{9C4DA2B1-FE97-418F-A6C5-FE2E66C5BEFF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -460,7 +462,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OK"
-              DTS:DTSID="{210A6B02-0025-4D6D-8954-A583D28F5E31}"
+              DTS:DTSID="{D9298E92-FC51-4349-BC0C-6AB62E140768}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1828,7 +1830,7 @@
                     <property
                       dataType="System.Boolean"
                       description="Specifies whether zero-length columns are treated as null."
-                      name="RetainNulls">false</property>
+                      name="RetainNulls">true</property>
                     <property
                       dataType="System.String"
                       description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
@@ -2159,71 +2161,13 @@
           Id="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1"
           TopLeft="342,283.941176063049" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Source"
-          TopLeft="361,114" />
-        <EdgeLayout
-          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="433.75,156">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,127.941176063049"
-              Start="0,0"
-              End="0,120.441176063049">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,120.441176063049" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="149,42"
           Id="Package\Loop for Movement\Movement Data Flow Task\File Read Error"
           TopLeft="629,229" />
-        <EdgeLayout
-          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Error Output]"
-          TopLeft="459.666666666667,156">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="243.833333333333,73"
-              Start="0,0"
-              End="243.833333333333,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6622691292876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6622691292876"
-                    Point2="0,29.6622691292876"
-                    Point3="4,29.6622691292876" />
-                  <mssgle:LineSegment
-                    End="239.833333333333,29.6622691292876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="239.833333333333,29.6622691292876"
-                    Point2="243.833333333333,29.6622691292876"
-                    Point3="243.833333333333,33.6622691292876" />
-                  <mssgle:LineSegment
-                    End="243.833333333333,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="58.2902799479167,34.6622691292876,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Source"
+          TopLeft="361,114" />
         <NodeLayout
           Size="181,42"
           Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1"
@@ -2264,6 +2208,66 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="433.75,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,127.941176063049"
+              Start="0,0"
+              End="0,120.441176063049">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,120.441176063049" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Error Output]"
+          TopLeft="459.666666666667,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="243.833333333333,73"
+              Start="0,0"
+              End="243.833333333333,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6622691292876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6622691292876"
+                    Point2="0,29.6622691292876"
+                    Point3="4,29.6622691292876" />
+                  <mssgle:LineSegment
+                    End="239.833333333333,29.6622691292876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="239.833333333333,29.6622691292876"
+                    Point2="243.833333333333,29.6622691292876"
+                    Point3="243.833333333333,33.6622691292876" />
+                  <mssgle:LineSegment
+                    End="243.833333333333,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.2902799479167,34.6622691292876,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -2290,75 +2294,17 @@
           Id="Package\Loop for UPC\UPC Data Flow Task\UPC File Read"
           TopLeft="361,112" />
         <NodeLayout
-          Size="176,42"
-          Id="Package\Loop for UPC\UPC Data Flow Task\Category Table Load"
-          TopLeft="326,281.941176063049" />
-        <EdgeLayout
-          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="412.333333333333,154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,127.941176063049"
-              Start="0,0"
-              End="0,120.441176063049">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,120.441176063049" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Loop for UPC\UPC Data Flow Task\File Read Error Destination"
-          TopLeft="679,207" />
-        <EdgeLayout
-          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Error Output]"
-          TopLeft="456.333333333333,154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="325.166666666667,53"
-              Start="0,0"
-              End="325.166666666667,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5470668485675" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.5470668485675"
-                    Point2="0,21.5470668485675"
-                    Point3="4,21.5470668485675" />
-                  <mssgle:LineSegment
-                    End="321.166666666667,21.5470668485675" />
-                  <mssgle:CubicBezierSegment
-                    Point1="321.166666666667,21.5470668485675"
-                    Point2="325.166666666667,21.5470668485675"
-                    Point3="325.166666666667,25.5470668485675" />
-                  <mssgle:LineSegment
-                    End="325.166666666667,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="98.9569466145834,26.5470668485675,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="226,42"
           Id="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination"
           TopLeft="653,381" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\Category Table Load"
+          TopLeft="326,281.941176063049" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\File Read Error Destination"
+          TopLeft="694,281" />
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[OLE DB Destination Error Output]"
           TopLeft="414,323.941176063049">
@@ -2392,6 +2338,64 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="102.79109375,33.5294119684755,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="412.333333333333,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,127.941176063049"
+              Start="0,0"
+              End="0,120.441176063049">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,120.441176063049" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Error Output]"
+          TopLeft="456.333333333333,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="340.166666666667,127"
+              Start="0,0"
+              End="340.166666666667,119.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.6316507503411" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.6316507503411"
+                    Point2="0,51.6316507503411"
+                    Point3="4,51.6316507503411" />
+                  <mssgle:LineSegment
+                    End="336.166666666667,51.6316507503411" />
+                  <mssgle:CubicBezierSegment
+                    Point1="336.166666666667,51.6316507503411"
+                    Point2="340.166666666667,51.6316507503411"
+                    Point3="340.166666666667,55.6316507503411" />
+                  <mssgle:LineSegment
+                    End="340.166666666667,119.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="106.456946614583,56.6316507503411,127.2527734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
