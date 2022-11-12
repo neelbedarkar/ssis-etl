@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{18059657-A5F2-4BE0-B0BA-6CC2AA843BF3}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{97C2409C-C54B-4B14-A6E6-BA5ACCC1D568}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -390,7 +390,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="STORE"
-              DTS:DTSID="{769E21CB-35C2-43F9-9AB0-4116F39A87CB}"
+              DTS:DTSID="{19191FAA-49FA-49B4-BB32-8F1CDCC91618}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -399,7 +399,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="UPC"
-              DTS:DTSID="{23B5C618-CDBC-4B16-B4BE-0B029F72A4C1}"
+              DTS:DTSID="{666C79F8-8C06-4AAF-803C-0462A43BC0A8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -408,7 +408,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="WEEK"
-              DTS:DTSID="{B833635E-7333-45A6-825A-C80082D50E2D}"
+              DTS:DTSID="{DA213C1A-C278-449B-AFAC-A3F1650FD2E4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -417,7 +417,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MOVE"
-              DTS:DTSID="{8E78C622-DBF9-4739-AD6F-7397AB527EC8}"
+              DTS:DTSID="{7F34F2C5-1C49-41D4-A89D-42E13097FC25}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -426,7 +426,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="QTY"
-              DTS:DTSID="{B1B7F1C9-601D-450A-BC05-B2579F34ADA6}"
+              DTS:DTSID="{8C6084D2-DFBF-4FF4-8DE9-F8C9BF4B3B11}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -435,16 +435,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PRICE"
-              DTS:DTSID="{10F5F616-51B1-4DAD-B0CC-7C5D6A5D50F0}"
+              DTS:DTSID="{B8ED91E1-318A-4293-985C-13A16FE9E0B4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SALE"
-              DTS:DTSID="{14EFAC8D-09BC-45D2-96EB-F573368983F2}"
+              DTS:DTSID="{D2F50DCC-B99F-451E-B68F-6CA49BA5CF3B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -453,7 +453,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PROFIT"
-              DTS:DTSID="{9C4DA2B1-FE97-418F-A6C5-FE2E66C5BEFF}"
+              DTS:DTSID="{32FEEAC5-F354-4374-95AE-5544594F6D21}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -462,7 +462,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OK"
-              DTS:DTSID="{D9298E92-FC51-4349-BC0C-6AB62E140768}"
+              DTS:DTSID="{BF17C135-CF4C-44C5-AB64-ED23D1CD5531}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -554,97 +554,6 @@
             <pipeline
               version="1">
               <components>
-                <component
-                  refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split"
-                  componentClassID="Microsoft.ConditionalSplit"
-                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-                  name="Conditional Split"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
-                      description="Input to the Conditional Split Transformation"
-                      name="Conditional Split Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[OK]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="OK"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Ok_1]"
-                      description="Output 1 of the Conditional Split Transformation"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      exclusionGroup="1"
-                      name="Ok_1"
-                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">(DT_I4)#{Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]} == 1</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Specifies the friendly version of the expression. This expression version uses column names."
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)OK == 1</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                          name="EvaluationOrder">0</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
-                      description="Default Output of the Conditional Split Transformation"
-                      exclusionGroup="1"
-                      name="Conditional Split Default Output"
-                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          name="IsDefaultOut">true</property>
-                      </properties>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
-                      description="Error Output of the Conditional Split Transformation"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Conditional Split Error Output"
-                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
                 <component
                   refId="Package\Loop for Movement\Movement Data Flow Task\File Read Error"
                   componentClassID="Microsoft.FlatFileDestination"
@@ -761,13 +670,13 @@
                           cachedDataType="i4"
                           cachedName="ErrorCode"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
+                          lineageId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
                         <inputColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
                           cachedDataType="i4"
                           cachedName="ErrorColumn"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
+                          lineageId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
                         <inputColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[UPC]"
                           cachedCodepage="1252"
@@ -820,7 +729,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[SALE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="10"
                           cachedName="SALE"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[SALE]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SALE]" />
@@ -1079,7 +988,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SALE]"
-                          length="50"
+                          length="10"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SALE]"
                           name="SALE"
                           truncationRowDisposition="RedirectRow">
@@ -1181,7 +1090,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SALE]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="SALE" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PROFIT]"
@@ -1227,11 +1136,102 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1"
+                  refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="OK Flag Check"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Inputs[Conditional Split Input].Columns[OK]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="OK"
+                          lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Ok_1]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Ok_1"
+                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">(DT_I4)#{Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]} == 1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)OK == 1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop for Movement\Movement Data Flow Task\ProductData"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="OLE DB Destination 1"
+                  name="ProductData"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -1284,7 +1284,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
+                      refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
                       connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
                       description="The OLE DB runtime connection used to access the database."
@@ -1292,131 +1292,131 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="RedirectRow"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[UPC]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[UPC]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="UPC"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[UPC]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[STORE]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[STORE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="10"
                           cachedName="STORE"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[STORE]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[WEEK]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[WEEK]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="WEEK"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[WEEK]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[MOVE]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[MOVE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="MOVE"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[QtySld]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtySld]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MOVE]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PRICE]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[PRICE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="PRICE"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PRICE]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[PROFIT]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[PROFIT]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="PROFIT"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PROFIT]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[OK]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[OK]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="OK"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[OK]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[OK]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[QTY]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[QTY]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="QTY"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[QtyBundle]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtyBundle]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[QTY]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[SALE]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[SALE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="10"
                           cachedName="SALE"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
+                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SALE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="UPC" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                           codePage="1252"
                           dataType="str"
                           length="10"
                           name="Store" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="Weekno" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[QtySld]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtySld]"
                           dataType="i8"
                           name="QtySld" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
                           dataType="numeric"
                           name="Price"
                           precision="18" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
                           dataType="numeric"
                           name="Profit"
                           precision="18" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
                           codePage="1252"
                           dataType="str"
                           length="10"
                           name="PromotionType" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[OK]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[OK]"
                           dataType="i4"
                           name="OK" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[QtyBundle]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtyBundle]"
                           dataType="i4"
                           name="QtyBundle" />
                       </externalMetadataColumns>
@@ -1424,22 +1424,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1451,9 +1451,9 @@
               <paths>
                 <path
                   refId="Package\Loop for Movement\Movement Data Flow Task.Paths[Conditional Split Default Output]"
-                  endId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  endId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input]"
                   name="Conditional Split Default Output"
-                  startId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]" />
+                  startId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Default Output]" />
                 <path
                   refId="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Error Output]"
                   endId="Package\Loop for Movement\Movement Data Flow Task\File Read Error.Inputs[Flat File Destination Input]"
@@ -1461,14 +1461,14 @@
                   startId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]" />
                 <path
                   refId="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Output]"
-                  endId="Package\Loop for Movement\Movement Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  endId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Inputs[Conditional Split Input]"
                   name="Flat File Source Output"
                   startId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
                 <path
                   refId="Package\Loop for Movement\Movement Data Flow Task.Paths[OLE DB Destination Error Output]"
                   endId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input]"
                   name="OLE DB Destination Error Output"
-                  startId="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]" />
+                  startId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Outputs[OLE DB Destination Error Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2432,170 +2432,148 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="179,70"
-          Id="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1"
-          TopLeft="341,283.941176063049" />
-        <NodeLayout
           Size="149,42"
           Id="Package\Loop for Movement\Movement Data Flow Task\File Read Error"
-          TopLeft="629,229" />
+          TopLeft="652,118" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Loop for Movement\Movement Data Flow Task\ProductData"
+          TopLeft="151,380.941176063049" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1"
+          TopLeft="621,399" />
         <NodeLayout
           Size="150,42"
           Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Source"
           TopLeft="361,114" />
         <NodeLayout
-          Size="181,42"
-          Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1"
-          TopLeft="654,404" />
+          Size="147,42"
+          Id="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check"
+          TopLeft="151,223" />
         <EdgeLayout
           Id="Package\Loop for Movement\Movement Data Flow Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="430.5,353.941176063049">
+          TopLeft="288,401.941176063049">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="314,50.058823936951"
+              EndConnector="333,18.058823936951"
               Start="0,0"
-              End="314,42.558823936951">
+              End="325.5,18.058823936951">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.0294119684755" />
+                    End="162.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.0294119684755"
-                    Point2="0,25.0294119684755"
-                    Point3="4,25.0294119684755" />
+                    Point1="162.5,0"
+                    Point2="166.5,0"
+                    Point3="166.5,4" />
                   <mssgle:LineSegment
-                    End="310,25.0294119684755" />
+                    End="166.5,14.058823936951" />
                   <mssgle:CubicBezierSegment
-                    Point1="310,25.0294119684755"
-                    Point2="314,25.0294119684755"
-                    Point3="314,29.0294119684755" />
+                    Point1="166.5,14.058823936951"
+                    Point2="166.5,18.058823936951"
+                    Point3="170.5,18.058823936951" />
                   <mssgle:LineSegment
-                    End="314,42.558823936951" />
+                    End="325.5,18.058823936951" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="83.79109375,30.0294119684755,146.4178125,11.43359375"
+              BoundingBox="93.29109375,-17.43359375,146.4178125,11.43359375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="436,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-211.5,67"
+              Start="0,0"
+              End="-211.5,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="-4,33.5" />
+                  <mssgle:LineSegment
+                    End="-207.5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-207.5,33.5"
+                    Point2="-211.5,33.5"
+                    Point3="-211.5,37.5" />
+                  <mssgle:LineSegment
+                    End="-211.5,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Error Output]"
-          TopLeft="459.666666666667,156">
+          TopLeft="511,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="243.833333333333,73"
+              EndConnector="141,0"
               Start="0,0"
-              End="243.833333333333,65.5">
+              End="133.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.6622691292876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6622691292876"
-                    Point2="0,29.6622691292876"
-                    Point3="4,29.6622691292876" />
-                  <mssgle:LineSegment
-                    End="239.833333333333,29.6622691292876" />
-                  <mssgle:CubicBezierSegment
-                    Point1="239.833333333333,29.6622691292876"
-                    Point2="243.833333333333,29.6622691292876"
-                    Point3="243.833333333333,33.6622691292876" />
-                  <mssgle:LineSegment
-                    End="243.833333333333,65.5" />
+                    End="133.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="58.2902799479167,34.6622691292876,127.2527734375,11.609375"
+              BoundingBox="3.12361328125001,5,127.2527734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Loop for Movement\Movement Data Flow Task\Conditional Split"
-          TopLeft="151,223" />
-        <EdgeLayout
-          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="412.333333333333,156">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-183.833333333333,67"
-              Start="0,0"
-              End="-183.833333333333,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.2242744063324" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.2242744063324"
-                    Point2="0,27.2242744063324"
-                    Point3="-4,27.2242744063324" />
-                  <mssgle:LineSegment
-                    End="-179.833333333333,27.2242744063324" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-179.833333333333,27.2242744063324"
-                    Point2="-183.833333333333,27.2242744063324"
-                    Point3="-183.833333333333,31.2242744063324" />
-                  <mssgle:LineSegment
-                    End="-183.833333333333,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Conditional Split Default Output]"
-          TopLeft="306,244">
+          TopLeft="222,265">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35,74.941176063049"
+              EndConnector="0,115.941176063049"
               Start="0,0"
-              End="27.5,74.941176063049">
+              End="0,108.441176063049">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="13.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.5,0"
-                    Point2="17.5,0"
-                    Point3="17.5,4" />
-                  <mssgle:LineSegment
-                    End="17.5,70.941176063049" />
-                  <mssgle:CubicBezierSegment
-                    Point1="17.5,70.941176063049"
-                    Point2="17.5,74.941176063049"
-                    Point3="21.5,74.941176063049" />
-                  <mssgle:LineSegment
-                    End="27.5,74.941176063049" />
+                    End="0,108.441176063049" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-70.61390625,48.3914864690245,141.2278125,11.658203125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Loop for Movement\Movement Data Flow Task\OLE DB Destination 1">
+    design-time-name="Package\Loop for Movement\Movement Data Flow Task\ProductData">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
