@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{0BF24E2B-E6C2-437F-A41F-F6304A2C871E}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{009CF38E-4E41-4E53-80BF-7442F22AF3B9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -505,6 +505,7 @@
       DTS:refId="Package\Loop for Movement"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
+      DTS:Disabled="True"
       DTS:DTSID="{411357ec-39b1-4c57-ac39-d6c80b7b9ac0}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -1382,6 +1383,7 @@
       DTS:refId="Package\Loop for UPC"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
+      DTS:Disabled="True"
       DTS:DTSID="{9E3EE22A-8C99-4100-80FA-409AA98B615F}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -1458,6 +1460,7 @@
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
+                          length="10"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output].Columns[FileName]"
                           name="FileName"
                           truncationRowDisposition="FailComponent">
@@ -1466,13 +1469,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">@[User::UPC_Filename]</property>
+                              name="Expression">[SUBSTRING](@[ThisFile],56,3)</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">@[User::UPC_Filename]</property>
+                              name="FriendlyExpression">SUBSTRING(@ThisFile,56,3)</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2286,7 +2289,7 @@
         <NodeLayout
           Size="174,42"
           Id="Package\Loop for UPC\UPC Data Flow Task"
-          TopLeft="84.114288536383,23.0882355407859" />
+          TopLeft="84.114288536383,22.0882355407859" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -2458,54 +2461,50 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="145,42"
-          Id="Package\Loop for UPC\UPC Data Flow Task\UPC File Read"
-          TopLeft="385,106" />
-        <NodeLayout
-          Size="226,42"
-          Id="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination"
-          TopLeft="653,381" />
+          Size="205,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\File Read Error Destination"
+          TopLeft="694,281" />
         <NodeLayout
           Size="176,42"
           Id="Package\Loop for UPC\UPC Data Flow Task\Category Table Load"
           TopLeft="259,328.941176063049" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\Loop for UPC\UPC Data Flow Task\File Read Error Destination"
-          TopLeft="694,281" />
+          Size="226,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination"
+          TopLeft="653,381" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\UPC File Read"
+          TopLeft="385,106" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type"
+          TopLeft="221,224" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Loop for UPC\UPC Data Flow Task\Add Filename"
+          TopLeft="123,107" />
         <EdgeLayout
-          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="435,349.941176063049">
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="385,127.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="218,52.058823936951"
+              EndConnector="-119,0"
               Start="0,0"
-              End="210.5,52.058823936951">
+              End="-111.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="105,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="105,0"
-                    Point2="109,0"
-                    Point3="109,4" />
-                  <mssgle:LineSegment
-                    End="109,48.058823936951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="109,48.058823936951"
-                    Point2="109,52.058823936951"
-                    Point3="113,52.058823936951" />
-                  <mssgle:LineSegment
-                    End="210.5,52.058823936951" />
+                    End="-111.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="35.79109375,-17.43359375,146.4178125,11.43359375"
+              BoundingBox="-63.75,5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2545,62 +2544,32 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Loop for UPC\UPC Data Flow Task\Add Filename"
-          TopLeft="122,108" />
-        <EdgeLayout
-          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="385,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-120,0"
-              Start="0,0"
-              End="-112.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-112.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type"
-          TopLeft="221,224" />
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="193.5,150">
+          TopLeft="194.5,149">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="143,74"
+              EndConnector="142,75"
               Start="0,0"
-              End="143,66.5">
+              End="142,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33" />
+                    End="0,33.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="4,37" />
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
                   <mssgle:LineSegment
-                    End="139,37" />
+                    End="138,37.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="139,37"
-                    Point2="143,37"
-                    Point3="143,41" />
+                    Point1="138,37.5"
+                    Point2="142,37.5"
+                    Point3="142,41.5" />
                   <mssgle:LineSegment
-                    End="143,66.5" />
+                    End="142,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2640,7 +2609,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-2.75,36.4705880315245,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop for UPC\UPC Data Flow Task.Paths[OLE DB Destination Error Output]"
+          TopLeft="435,349.941176063049">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="218,52.058823936951"
+              Start="0,0"
+              End="210.5,52.058823936951">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="105,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="105,0"
+                    Point2="109,0"
+                    Point3="109,4" />
+                  <mssgle:LineSegment
+                    End="109,48.058823936951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="109,48.058823936951"
+                    Point2="109,52.058823936951"
+                    Point3="113,52.058823936951" />
+                  <mssgle:LineSegment
+                    End="210.5,52.058823936951" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="35.79109375,-17.43359375,146.4178125,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
