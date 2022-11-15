@@ -7,12 +7,12 @@
   DTS:CreatorName="LAPTOP-ULSN1LR1\Neel Bedarkar"
   DTS:DTSID="{6099AAC1-BF9A-4677-BB1F-516659566945}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{97C2409C-C54B-4B14-A6E6-BA5ACCC1D568}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{F2262666-0E60-4F8E-8B15-7BBCAB35EE6A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -410,17 +410,17 @@
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="C:\Users\yuwan425\Desktop\StorePriceTier.csv">
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Sunita Mandrupkar\Documents\Notes\ISTM 637 Data warehousing\Project\py scripts\Sampled\StorePriceTier.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Store"
-              DTS:DTSID="{8A68AEEB-75BD-487B-A2C6-448882BA4E1F}"
+              DTS:DTSID="{4D6875AE-C79E-4B37-972D-E3E0937B1EA0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -429,16 +429,16 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{9CEAD83C-99D3-48DD-B0EE-E2F5A26D3BF8}"
+              DTS:DTSID="{734340C3-9C2B-4B3C-B1CA-A032F2B7FF3D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
+              DTS:MaximumWidth="10"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PriceTier"
-              DTS:DTSID="{0614B942-D96E-475C-B59B-AB8285E328D8}"
+              DTS:DTSID="{566A0940-774F-4C01-87A5-70AD88856C30}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -447,7 +447,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 3"
-              DTS:DTSID="{75242CB6-36C8-475B-8B90-CADD3A37E039}"
+              DTS:DTSID="{0DD50F3D-ECE1-466B-B1AD-F5F6A11D5862}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -456,7 +456,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 4"
-              DTS:DTSID="{1430B34D-05D6-4562-83F0-7970583EF785}"
+              DTS:DTSID="{32B34DBB-047D-4CB2-8034-21D7D8DDFDF5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -465,7 +465,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 5"
-              DTS:DTSID="{8A55E050-32F4-45B9-BD98-266B80DA8D46}"
+              DTS:DTSID="{537DBE2C-504C-444B-83A3-FE9B21D2FEB8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1393,7 +1393,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1777,7 +1777,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2545,12 +2545,12 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Store]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store]"
-                      length="50"
+                      length="10"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Store]"
                       name="Store"
                       truncationRowDisposition="FailComponent">
@@ -2567,7 +2567,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 1]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2589,12 +2589,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PriceTier]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PriceTier]"
-                      length="50"
+                      length="10"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PriceTier]"
                       name="PriceTier"
                       truncationRowDisposition="FailComponent">
@@ -2611,7 +2611,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 3]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2633,7 +2633,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 4]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2655,7 +2655,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Column 5]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2680,37 +2680,37 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="10"
                       name="Store" />
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="Column 1" />
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PriceTier]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="10"
                       name="PriceTier" />
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="Column 3" />
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 4]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="Column 4" />
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 5]"
-                      codePage="65001"
+                      codePage="1252"
                       dataType="str"
                       length="50"
                       name="Column 5" />
@@ -2770,7 +2770,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2778,7 +2778,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
+                  name="AlwaysUseDefaultCodePage">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
@@ -2819,17 +2819,17 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Store]"
-                      cachedCodepage="65001"
+                      cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="10"
                       cachedName="Store"
                       externalMetadataColumnId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Store]" />
                     <inputColumn
                       refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PriceTier]"
-                      cachedCodepage="65001"
+                      cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="10"
                       cachedName="PriceTier"
                       externalMetadataColumnId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PriceTier]" />
@@ -3103,7 +3103,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3282,27 +3282,35 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task"
           TopLeft="86.114288536383,23.0882355407859" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="330,193"
-          Size="330,236"
+          PanelSize="329.6,192.8"
+          Size="329.6,236"
           Id="Package\Loop for Movement"
           TopLeft="141.714288110636,474.08235431394" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task"
           TopLeft="84.114288536383,22.0882355407859" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="330,193"
-          Size="330,236"
+          PanelSize="329.6,192.8"
+          Size="329.6,236"
           Id="Package\Loop for UPC"
           TopLeft="140.714288110636,148.08235431394" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Stores Data Flow Task"
+          TopLeft="210.714285130404,889.470587666885" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Weeks Data Flow Task"
+          TopLeft="217.285714103251,782.470588213845" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="306.214288110636,384.08235431394">
@@ -3325,40 +3333,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Weeks Data Flow Task"
-          TopLeft="228,784" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Stores Data Flow Task"
-          TopLeft="245,930" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="306.714288110636,710.08235431394">
+          TopLeft="308.300001106944,710.08235431394">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="14.285711889364,73.91764568606"
+              EndConnector="0,72.3882338999047"
               Start="0,0"
-              End="14.285711889364,66.41764568606">
+              End="0,64.8882338999047">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.95882284303" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.95882284303"
-                    Point2="0,36.95882284303"
-                    Point3="4,36.95882284303" />
-                  <mssgle:LineSegment
-                    End="10.285711889364,36.95882284303" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.285711889364,36.95882284303"
-                    Point2="14.285711889364,36.95882284303"
-                    Point3="14.285711889364,40.95882284303" />
-                  <mssgle:LineSegment
-                    End="14.285711889364,66.41764568606" />
+                    End="0,64.8882338999047" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3369,30 +3357,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="321,826">
+          TopLeft="306.399999616827,824.070588213845">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16,104"
+              EndConnector="0,65.3999994530399"
               Start="0,0"
-              End="16,96.5">
+              End="0,57.8999994530399">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,48"
-                    Point2="0,52"
-                    Point3="4,52" />
-                  <mssgle:LineSegment
-                    End="12,52" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,52"
-                    Point2="16,52"
-                    Point3="16,56" />
-                  <mssgle:LineSegment
-                    End="16,96.5" />
+                    End="0,57.8999994530399" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3771,6 +3747,57 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Stores Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Stores Data Flow Task\Flat File Source"
+          TopLeft="186,108" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Stores Data Flow Task\OLE DB Destination"
+          TopLeft="181.85714120281,214.99999981768" />
+        <EdgeLayout
+          Id="Package\Stores Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="264.328570601405,149.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.3999998176799"
+              Start="0,0"
+              End="0,57.8999998176799">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.8999998176799" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stores Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Weeks Data Flow Task">
     <LayoutInfo>
       <GraphLayout
@@ -3822,69 +3849,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Weeks Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Stores Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Stores Data Flow Task\Flat File Source"
-          TopLeft="186,108" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Stores Data Flow Task\OLE DB Destination"
-          TopLeft="279,228" />
-        <EdgeLayout
-          Id="Package\Stores Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="261.5,150">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="103,78"
-              Start="0,0"
-              End="103,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="4,39" />
-                  <mssgle:LineSegment
-                    End="99,39" />
-                  <mssgle:CubicBezierSegment
-                    Point1="99,39"
-                    Point2="103,39"
-                    Point3="103,43" />
-                  <mssgle:LineSegment
-                    End="103,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Stores Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
