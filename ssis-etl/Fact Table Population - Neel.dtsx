@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{55B11011-0543-4B5B-9117-84B2E273A877}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{324FB7AE-7442-4F98-9ECB-EE7877A8FFED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -47,7 +47,6 @@
       DTS:refId="Package\Calculate Aggregates"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{47A02365-50AF-4D92-8EBC-99FAEA75B398}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -377,9 +376,7 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Calculate Aggregates\Temp Table.Inputs[OLE DB Destination Input].ExternalColumns[Week]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Week" />
                     <externalMetadataColumn
                       refId="Package\Calculate Aggregates\Temp Table.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
@@ -448,7 +445,6 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
       DTS:refId="Package\Create Temp Table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{B61BE322-C91C-4D3D-A241-9F4B42169CDB}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -466,7 +462,6 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
       DTS:refId="Package\Drop Temp Table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{A41AF4B1-A0D0-4D6E-93E7-052FD844CA2A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -492,7 +487,2145 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
-          version="1" />
+          version="1">
+          <components>
+            <component
+              refId="Package\Move Temp to Data Mart\Dim_ProductCategory"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Dim_ProductCategory"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_ProductCategory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[PCKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[PCKey]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[PCKey]"
+                      name="PCKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[ManufacturerID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ManufacturerID]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[ManufacturerID]"
+                      name="ManufacturerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[CategoryCode]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[CategoryCode]"
+                      name="CategoryCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[CommodityCode]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[CommodityCode]"
+                      name="CommodityCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[UPC]"
+                      name="UPC"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ItemNumber]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[ItemNumber]"
+                      name="ItemNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[PCKey]"
+                      dataType="i4"
+                      name="PCKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ManufacturerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ManufacturerID" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CategoryCode" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CommodityCode" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UPC" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ProductName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[PCKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[PCKey]"
+                      name="PCKey" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ManufacturerID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ManufacturerID]"
+                      name="ManufacturerID" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[CategoryCode]"
+                      name="CategoryCode" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[CommodityCode]"
+                      name="CommodityCode" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[UPC]"
+                      name="UPC" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ItemNumber]"
+                      name="ItemNumber" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Dim_StorePriceTier"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Dim_StorePriceTier"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_StorePriceTier]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTierKey]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]"
+                      name="StorePriceTierKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].Columns[PriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].ExternalColumns[PriceTier]"
+                      length="10"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].Columns[PriceTier]"
+                      name="PriceTier"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTierKey]"
+                      dataType="i4"
+                      name="StorePriceTierKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].ExternalColumns[PriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PriceTier" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[StorePriceTierKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[StorePriceTierKey]"
+                      name="StorePriceTierKey" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[PriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[PriceTier]"
+                      name="PriceTier" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Dim_Time"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Dim_Time"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Time]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move Temp to Data Mart\Dim_Time.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      name="TimeKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarYear]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarYear]"
+                      name="CalendarYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarQuarter]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarQuarter]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarQuarter]"
+                      name="CalendarQuarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarMonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarMonth]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarMonth]"
+                      name="CalendarMonth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[WeekNo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[WeekNo]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[WeekNo]"
+                      name="WeekNo"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarDate]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarDate]"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[CalendarDate]"
+                      name="CalendarDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[HolidayList]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[HolidayList]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[HolidayList]"
+                      name="HolidayList"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      dataType="i4"
+                      name="TimeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarYear]"
+                      dataType="i4"
+                      name="CalendarYear" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarQuarter]"
+                      dataType="i4"
+                      name="CalendarQuarter" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarMonth]"
+                      dataType="i4"
+                      name="CalendarMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[WeekNo]"
+                      dataType="i4"
+                      name="WeekNo" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[CalendarDate]"
+                      dataType="i4"
+                      name="CalendarDate" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].ExternalColumns[HolidayList]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HolidayList" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      name="TimeKey" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarYear]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarYear]"
+                      name="CalendarYear" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarQuarter]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarQuarter]"
+                      name="CalendarQuarter" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarMonth]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarMonth]"
+                      name="CalendarMonth" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[WeekNo]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[WeekNo]"
+                      name="WeekNo" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarDate]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[CalendarDate]"
+                      name="CalendarDate" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[HolidayList]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[HolidayList]"
+                      name="HolidayList" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[Week]"
+                      cachedDataType="i4"
+                      cachedName="Week"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[Week]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[QuantitySold]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[ProfitMargin]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[UPC]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[StorePriceTier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="StorePriceTier"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[StorePriceTier]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Right Input].Columns[WeekNo]"
+                      cachedDataType="i4"
+                      cachedName="WeekNo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[WeekNo]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Right Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="TimeKey"
+                      lineageId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output].Columns[TimeKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[QuantitySold]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[ProfitMargin]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[TimeKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[TimeKey]"
+                      name="TimeKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Right Input].Columns[TimeKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[UPC]"
+                      name="UPC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[UPC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[StorePriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[StorePriceTier]"
+                      name="StorePriceTier">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input].Columns[StorePriceTier]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[StorePriceTier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="StorePriceTier"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[StorePriceTier]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[QuantitySold]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[ProfitMargin]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="TimeKey"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[TimeKey]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[UPC]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Right Input].Columns[PriceTier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PriceTier"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].Columns[PriceTier]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Right Input].Columns[StorePriceTierKey]"
+                      cachedDataType="i4"
+                      cachedName="StorePriceTierKey"
+                      lineageId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[StorePriceTierKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[StorePriceTierKey]"
+                      name="StorePriceTierKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Right Input].Columns[StorePriceTierKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[QuantitySold]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[ProfitMargin]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[TimeKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[TimeKey]"
+                      name="TimeKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[TimeKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[UPC]"
+                      name="UPC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input].Columns[UPC]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Merge Join 2"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[UPC]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[StorePriceTierKey]"
+                      cachedDataType="i4"
+                      cachedName="StorePriceTierKey"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[StorePriceTierKey]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[QuantitySold]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[ProfitMargin]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="TimeKey"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[TimeKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Right Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[UPC]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Right Input].Columns[PCKey]"
+                      cachedDataType="i4"
+                      cachedName="PCKey"
+                      lineageId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output].Columns[PCKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[StorePriceTierKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[StorePriceTierKey]"
+                      name="StorePriceTierKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[StorePriceTierKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[QuantitySold]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[ProfitMargin]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[TimeKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[TimeKey]"
+                      name="TimeKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input].Columns[TimeKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[PCKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[PCKey]"
+                      name="PCKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Right Input].Columns[PCKey]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Sort StorePriceTier"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort StorePriceTier"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Inputs[Sort Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[QuantitySold]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Inputs[Sort Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[ProfitMargin]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Inputs[Sort Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="TimeKey"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[TimeKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Inputs[Sort Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[UPC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Inputs[Sort Input].Columns[StorePriceTier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="StorePriceTier"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[StorePriceTier]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[QuantitySold]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[ProfitMargin]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[TimeKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[TimeKey]"
+                      name="TimeKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[TimeKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[UPC]"
+                      name="UPC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[UPC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[StorePriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output].Columns[StorePriceTier]"
+                      name="StorePriceTier"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output].Columns[StorePriceTier]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Sort UPC"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort UPC"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Move Temp to Data Mart\Sort UPC.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Inputs[Sort Input].Columns[StorePriceTierKey]"
+                      cachedDataType="i4"
+                      cachedName="StorePriceTierKey"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[StorePriceTierKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Inputs[Sort Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[QuantitySold]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Inputs[Sort Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[ProfitMargin]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Inputs[Sort Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="TimeKey"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[TimeKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Inputs[Sort Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[UPC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[StorePriceTierKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[StorePriceTierKey]"
+                      name="StorePriceTierKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[StorePriceTierKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[QuantitySold]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[ProfitMargin]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[TimeKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[TimeKey]"
+                      name="TimeKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[TimeKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output].Columns[UPC]"
+                      name="UPC"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output].Columns[UPC]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Sort Week Number"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Week Number"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Move Temp to Data Mart\Sort Week Number.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Inputs[Sort Input].Columns[Week]"
+                      cachedDataType="i4"
+                      cachedName="Week"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[Week]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Inputs[Sort Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[UPC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Inputs[Sort Input].Columns[StorePriceTier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="StorePriceTier"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTier]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Inputs[Sort Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Inputs[Sort Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[Week]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[Week]"
+                      name="Week"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[Week]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[UPC]"
+                      name="UPC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[UPC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[StorePriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[StorePriceTier]"
+                      name="StorePriceTier">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTier]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Store Price Data Mart"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Store Price Data Mart"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_StorePriceTierSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move Temp to Data Mart\Store Price Data Mart.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[QuantitySold]"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[QuantitySold]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[ProfitMargin]"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[ProfitMargin]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="TimeKey"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[TimeKey]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[PCKey]"
+                      cachedDataType="i4"
+                      cachedName="PCKey"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[PCKey]" />
+                    <inputColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[StorePriceTierKey]"
+                      cachedDataType="i4"
+                      cachedName="StorePriceTierKey"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[StorePTKey]"
+                      lineageId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output].Columns[StorePriceTierKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[StorePTKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="StorePTKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[QuantitySold]"
+                      dataType="numeric"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[ProfitMargin]"
+                      dataType="numeric"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Store Price Data Mart.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp to Data Mart\Temp Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Temp Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TmpStoreDM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move Temp to Data Mart\Temp Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[Week]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[Week]"
+                      name="Week"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[UPC]"
+                      name="UPC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTier]"
+                      length="10"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTier]"
+                      name="StorePriceTier"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[QuantitySold]"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[ProfitMargin]"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      dataType="i4"
+                      name="Week" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UPC" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="StorePriceTier" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[QuantitySold]"
+                      dataType="numeric"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[ProfitMargin]"
+                      dataType="numeric"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      name="Week" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[UPC]"
+                      name="UPC" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[StorePriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[StorePriceTier]"
+                      name="StorePriceTier" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[Merge Join Output]"
+              endId="Package\Move Temp to Data Mart\Sort StorePriceTier.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Move Temp to Data Mart\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[Merge Join Output1]"
+              endId="Package\Move Temp to Data Mart\Sort UPC.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Move Temp to Data Mart\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[Merge Join Output2]"
+              endId="Package\Move Temp to Data Mart\Store Price Data Mart.Inputs[OLE DB Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Move Temp to Data Mart\Merge Join 2.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[OLE DB Source Output]"
+              endId="Package\Move Temp to Data Mart\Sort Week Number.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Move Temp to Data Mart\Temp Table.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[OLE DB Source Output1]"
+              endId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Move Temp to Data Mart\Dim_Time.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[OLE DB Source Output2]"
+              endId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Move Temp to Data Mart\Dim_StorePriceTier.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[OLE DB Source Output3]"
+              endId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Move Temp to Data Mart\Dim_ProductCategory.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[Sort Output]"
+              endId="Package\Move Temp to Data Mart\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Move Temp to Data Mart\Sort Week Number.Outputs[Sort Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[Sort Output1]"
+              endId="Package\Move Temp to Data Mart\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Move Temp to Data Mart\Sort StorePriceTier.Outputs[Sort Output]" />
+            <path
+              refId="Package\Move Temp to Data Mart.Paths[Sort Output2]"
+              endId="Package\Move Temp to Data Mart\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Move Temp to Data Mart\Sort UPC.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -537,51 +2670,33 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
         <NodeLayout
           Size="177.6,41.6"
           Id="Package\Calculate Aggregates"
-          TopLeft="159.285716998334,146.823531470909" />
+          TopLeft="159.285716998334,146.058825577832" />
         <NodeLayout
           Size="168,41.6"
           Id="Package\Create Temp Table"
-          TopLeft="164.285717083484,43.5882359054261" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="248.185717040909,85.1882359054262">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61.6352955654831"
-              Start="0,0"
-              End="0,54.1352955654831">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.1352955654831" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="163.571431357034,43.5882359054261" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Drop Temp Table"
+          TopLeft="162.142859904134,345.82353420571" />
         <NodeLayout
           Size="196,41.6"
           Id="Package\Move Temp to Data Mart"
           TopLeft="147.142859648685,247.76470935716" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="246.61428832351,188.423531470909">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="247.828574177684,85.1882359054261">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.3411778862502"
+              EndConnector="0,60.8705896724059"
               Start="0,0"
-              End="0,51.8411778862502">
+              End="0,53.3705896724059">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.8411778862502" />
+                    End="0,53.3705896724059" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -590,24 +2705,42 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,41.6"
-          Id="Package\Drop Temp Table"
-          TopLeft="162.142859904134,345.82353420571" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="243.642859776409,289.36470935716">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="246.61428832351,187.658825577832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.4588248485508"
+              EndConnector="0,60.1058837793279"
               Start="0,0"
-              End="0,48.9588248485508">
+              End="0,52.6058837793279">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.9588248485508" />
+                    End="0,52.6058837793279" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="243.64285977641,289.36470935716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.45882484855"
+              Start="0,0"
+              End="0,48.95882484855">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.95882484855" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -657,5 +2790,439 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Calculate Aggregates\Temp Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Move Temp to Data Mart">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\Move Temp to Data Mart\Temp Table"
+          TopLeft="49.2857099309259,96.294117679233" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Move Temp to Data Mart\Store Price Data Mart"
+          TopLeft="692.730165605642,649.588240463428" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Move Temp to Data Mart\Dim_Time"
+          TopLeft="227.857146737527,97.2117648238542" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Move Temp to Data Mart\Dim_StorePriceTier"
+          TopLeft="455.873023636487,217.780393965764" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Move Temp to Data Mart\Dim_ProductCategory"
+          TopLeft="726.58731396101,395.322881100701" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Move Temp to Data Mart\Sort Week Number"
+          TopLeft="70.7142869185429,175.976471810852" />
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[OLE DB Source Output]"
+          TopLeft="116.485709930926,137.894117679233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.228576987617,38.0823541316194"
+              Start="0,0"
+              End="38.228576987617,30.5823541316194">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0411770658097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0411770658097"
+                    Point2="0,19.0411770658097"
+                    Point3="4,19.0411770658097" />
+                  <mssgle:LineSegment
+                    End="34.228576987617,19.0411770658097" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.228576987617,19.0411770658097"
+                    Point2="38.228576987617,19.0411770658097"
+                    Point3="38.228576987617,23.0411770658097" />
+                  <mssgle:LineSegment
+                    End="38.228576987617,30.5823541316194" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Move Temp to Data Mart\Merge Join"
+          TopLeft="206.190479701879,244.800002187841" />
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[Sort Output]"
+          TopLeft="154.714286918543,217.576471810852">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.0095261166694,27.2235303769888"
+              Start="0,0"
+              End="96.0095261166694,19.7235303769888">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.1349216624592" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1349216624592"
+                    Point2="0,16.1349216624592"
+                    Point3="4,16.1349216624592" />
+                  <mssgle:LineSegment
+                    End="92.0095261166694,16.1349216624592" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.0095261166694,16.1349216624592"
+                    Point2="96.0095261166694,16.1349216624592"
+                    Point3="96.0095261166694,20.1349216624592" />
+                  <mssgle:LineSegment
+                    End="96.0095261166694,19.7235303769888" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[OLE DB Source Output1]"
+          TopLeft="291.157146553036,138.811764823854">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,105.988237363987"
+              Start="0,0"
+              End="0,98.488237363987">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,98.488237363987" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Move Temp to Data Mart\Sort StorePriceTier"
+          TopLeft="309.285719552819,323.320263616216" />
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[Merge Join Output]"
+          TopLeft="270.990479701879,286.400002187841">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121.49523985094,36.9202614283753"
+              Start="0,0"
+              End="121.49523985094,29.4202614283753">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.4601307141876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.4601307141876"
+                    Point2="0,18.4601307141876"
+                    Point3="4,18.4601307141876" />
+                  <mssgle:LineSegment
+                    End="117.49523985094,18.4601307141876" />
+                  <mssgle:CubicBezierSegment
+                    Point1="117.49523985094,18.4601307141876"
+                    Point2="121.49523985094,18.4601307141876"
+                    Point3="121.49523985094,22.4601307141876" />
+                  <mssgle:LineSegment
+                    End="121.49523985094,29.4202614283753" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Move Temp to Data Mart\Merge Join 1"
+          TopLeft="455.555563313621,390.139872385254" />
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[Sort Output1]"
+          TopLeft="392.485719552819,364.920263616217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132.269843760802,25.2196087690375"
+              Start="0,0"
+              End="132.269843760802,17.7196087690375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.60980438451872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.60980438451872"
+                    Point2="0,12.6098043845187"
+                    Point3="4,12.6098043845187" />
+                  <mssgle:LineSegment
+                    End="128.269843760802,12.6098043845187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="128.269843760802,12.6098043845187"
+                    Point2="132.269843760802,12.6098043845187"
+                    Point3="132.269843760802,16.6098043845187" />
+                  <mssgle:LineSegment
+                    End="132.269843760802,17.7196087690375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[OLE DB Source Output2]"
+          TopLeft="543.380960141721,259.380393965764">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,130.75947841949"
+              Start="0,0"
+              End="0,123.25947841949">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,123.25947841949" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Move Temp to Data Mart\Sort UPC"
+          TopLeft="600.000010217939,457.490198866856" />
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[Merge Join Output1]"
+          TopLeft="524.755563313621,431.739872385254">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.244446904318,25.7503264816022"
+              Start="0,0"
+              End="135.244446904318,18.2503264816022">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.8751632408011" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.8751632408011"
+                    Point2="0,12.8751632408011"
+                    Point3="4,12.8751632408011" />
+                  <mssgle:LineSegment
+                    End="131.244446904318,12.8751632408011" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.244446904318,12.8751632408011"
+                    Point2="135.244446904318,12.8751632408011"
+                    Point3="135.244446904318,16.8751632408011" />
+                  <mssgle:LineSegment
+                    End="135.244446904318,18.2503264816022" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Move Temp to Data Mart\Merge Join 2"
+          TopLeft="705.555567571095,547.333337182313" />
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[Sort Output2]"
+          TopLeft="660.000010217939,499.090198866856">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.755557353156,48.2431383154568"
+              Start="0,0"
+              End="114.755557353156,40.7431383154568">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1215691577284" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1215691577284"
+                    Point2="0,24.1215691577284"
+                    Point3="4,24.1215691577284" />
+                  <mssgle:LineSegment
+                    End="110.755557353156,24.1215691577284" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.755557353156,24.1215691577284"
+                    Point2="114.755557353156,24.1215691577284"
+                    Point3="114.755557353156,28.1215691577284" />
+                  <mssgle:LineSegment
+                    End="114.755557353156,40.7431383154568" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[OLE DB Source Output3]"
+          TopLeft="816.98731396101,436.922881100701">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.4984130565812,110.410456081612"
+              Start="0,0"
+              End="-20.4984130565812,102.910456081612">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.4891733786931" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,61.4891733786931"
+                    Point2="0,65.4891733786931"
+                    Point3="-4,65.4891733786931" />
+                  <mssgle:LineSegment
+                    End="-16.4984130565812,65.4891733786931" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.4984130565812,65.4891733786931"
+                    Point2="-20.4984130565812,65.4891733786931"
+                    Point3="-20.4984130565812,69.4891733786931" />
+                  <mssgle:LineSegment
+                    End="-20.4984130565812,102.910456081612" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Move Temp to Data Mart.Paths[Merge Join Output2]"
+          TopLeft="778.542866588369,588.933337182313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.6549032811153"
+              Start="0,0"
+              End="0,53.1549032811153">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.1549032811153" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move Temp to Data Mart\Store Price Data Mart">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move Temp to Data Mart\Temp Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move Temp to Data Mart\Dim_Time">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move Temp to Data Mart\Dim_StorePriceTier">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move Temp to Data Mart\Dim_ProductCategory">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
