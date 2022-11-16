@@ -1,0 +1,2371 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/14/2022 10:55:28 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-ULSN1LR1"
+  DTS:CreatorName="LAPTOP-ULSN1LR1\Neel Bedarkar"
+  DTS:DTSID="{FCB9317E-92D6-43D1-A29A-891D7079534F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Dimension Population Alex"
+  DTS:PackageType="5"
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{A96010EF-6B8B-468B-8058-4CCEA5B21EB7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{36A58EB5-3703-4A08-9DC5-2799AD9B8686}"
+      DTS:ObjectName="infodata16.mbs.tamu.edu.602-Group6-dw-area">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=infodata16.mbs.tamu.edu;Initial Catalog=602-Group6-dw-area;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BCBABB4F-EF21-4E91-80FF-999B6BB36544}"
+      DTS:ObjectName="infodata16.mbs.tamu.edu.602-Group6-staging-area">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=infodata16.mbs.tamu.edu;Initial Catalog=602-Group6-staging-area;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim Product Category Population"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{dd773d49-d105-4452-aa47-a543144ed641}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim Product Category Population"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim Product Category Population\Category Staging Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Category Staging Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Category_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Product Category Population\Category Staging Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CategoryCode]"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]"
+                      name="CategoryCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]"
+                      name="UPC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CommodityCode]"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]"
+                      name="CommodityCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ItemNumber]"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]"
+                      name="ItemNumber"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CategoryCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UPC" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CommodityCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemNumber" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CategoryCode]"
+                      name="CategoryCode" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[UPC]"
+                      name="UPC" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CommodityCode]"
+                      name="CommodityCode" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ItemNumber]"
+                      name="ItemNumber" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Product Category Population\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Product Category Population\Conditional Split.Outputs[UPC Cleaned]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="UPC Cleaned"
+                  synchronousInputId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[LEN](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]}) &gt; 5</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LEN(UPC) &gt; 5</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Product Category Population\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Product Category Population\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Product Category Population\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input].Columns[CategoryCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CategoryCode"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(CategoryCode)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]" />
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input].Columns[ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ProductName"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(ProductName,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]"
+                      name="Manufacturer ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,50,1252)[LEFT](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]},[LEN](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]}) - 5)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,50,1252)LEFT(UPC,LEN(UPC) - 5)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Product Category Population\TempTable"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="TempTable"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_ProductCategory]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Product Category Population\TempTable.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[CategoryCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CategoryCode"
+                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]" />
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="UPC"
+                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]" />
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[CommodityCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CommodityCode"
+                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]" />
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[ItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ItemNumber"
+                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]" />
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[Manufacturer ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Manufacturer ID"
+                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ManufacturerID]"
+                      lineageId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ManufacturerID]"
+                      dataType="i4"
+                      name="ManufacturerID" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CategoryCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CommodityCode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="UPC" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ItemNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
+                      dataType="i4"
+                      name="PCKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim Product Category Population.Paths[OLE DB Source Output]"
+              endId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim Product Category Population.Paths[Transformed Data]"
+              endId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input]"
+              name="Transformed Data"
+              startId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dim Product Category Population.Paths[UPC Cleaned]"
+              endId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input]"
+              name="UPC Cleaned"
+              startId="Package\Dim Product Category Population\Conditional Split.Outputs[UPC Cleaned]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim Promotion Population"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{63e9a503-ebba-4846-8819-9f5d7daf51b3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim Promotion Population"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim Promotion Population\Dim_Promotion"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Promotion"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Promotion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Promotion Population\Dim_Promotion.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].Columns[PromotionName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="PromotionName"
+                      externalMetadataColumnId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].Columns[PromotionName]" />
+                    <inputColumn
+                      refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].Columns[Trimmed PromotionType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Trimmed PromotionType"
+                      externalMetadataColumnId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
+                      lineageId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Output].Columns[Trimmed PromotionType]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
+                      dataType="i4"
+                      name="PromotionKey" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PromotionID" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PromotionName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Promotion Population\Dim_Promotion.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Dim_Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Promotion Population\Dim_Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Dim_Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Promotion Population\Dim_Promotion.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Promotion Population\Fix Data Type Mismatch"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Fix Data Type Mismatch"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim Promotion Population\Fix Data Type Mismatch.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Promotion Population\Fix Data Type Mismatch.Inputs[Data Conversion Input].Columns[PromotionType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PromotionType"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].Columns[PromotionType]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Dim Promotion Population\Fix Data Type Mismatch.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Output].Columns[Trimmed PromotionType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Output].Columns[Trimmed PromotionType]"
+                      name="Trimmed PromotionType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].Columns[PromotionType]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Dim Promotion Population\Fix Data Type Mismatch.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Promotion Population\Product Staging Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Product Staging Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Category_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT 
+                  REPLACE(PromotionType, '"', '') AS PromotionType, CASE WHEN REPLACE(PromotionType, '"', '') = 'B' THEN 'Bonus Buy' WHEN REPLACE(PromotionType, '"', '') = 'C' THEN 'Coupon' WHEN REPLACE(PromotionType, '"', '') 
+                  = 'S' THEN 'Sale' ELSE 'Not Available' END AS PromotionName
+FROM     Product_Staging</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Promotion Population\Product Staging Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].Columns[PromotionType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].ExternalColumns[PromotionType]"
+                      length="8000"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].Columns[PromotionType]"
+                      name="PromotionType"
+                      truncationRowDisposition="IgnoreFailure" />
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].Columns[PromotionName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].ExternalColumns[PromotionName]"
+                      length="13"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].Columns[PromotionName]"
+                      name="PromotionName"
+                      truncationRowDisposition="IgnoreFailure" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].ExternalColumns[PromotionType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PromotionType" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output].ExternalColumns[PromotionName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="PromotionName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[PromotionType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[PromotionType]"
+                      name="PromotionType" />
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[PromotionName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[PromotionName]"
+                      name="PromotionName" />
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim Promotion Population.Paths[Data Conversion Output]"
+              endId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Dim Promotion Population.Paths[OLE DB Source Output]"
+              endId="Package\Dim Promotion Population\Fix Data Type Mismatch.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim Promotion Population\Product Staging Table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim StorePriceTier Population"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8269D42B-93E8-46C0-B0BF-88396AB68F92}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim StorePriceTier Population"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim StorePriceTier Population\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim StorePriceTier Population\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim StorePriceTier Population\Conditional Split.Inputs[Conditional Split Input].Columns[PriceTier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PriceTier"
+                      lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Price Tier Not Null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Price Tier Not Null"
+                  synchronousInputId="Package\Dim StorePriceTier Population\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(PriceTier)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Dim StorePriceTier Population\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Dim StorePriceTier Population\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_StorePriceTier"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_StorePriceTier]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input].Columns[PriceTier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="PriceTier"
+                      externalMetadataColumnId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
+                      lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input].ExternalColumns[StorePriceTierKey]"
+                      dataType="i4"
+                      name="StorePriceTierKey" />
+                    <externalMetadataColumn
+                      refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PriceTier" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim StorePriceTier Population\Store Price Tier Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Store Price Tier Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Store_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT PriceTier
+FROM     Store_Staging</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].ExternalColumns[PriceTier]"
+                      length="10"
+                      lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]"
+                      name="PriceTier"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].ExternalColumns[PriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="PriceTier" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[PriceTier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[PriceTier]"
+                      name="PriceTier" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim StorePriceTier Population.Paths[OLE DB Source Output]"
+              endId="Package\Dim StorePriceTier Population\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Dim StorePriceTier Population.Paths[Price Tier Not Null]"
+              endId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input]"
+              name="Price Tier Not Null"
+              startId="Package\Dim StorePriceTier Population\Conditional Split.Outputs[Price Tier Not Null]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dim Time Population"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0b96f018-07cb-4da5-9ee1-73c808c9f40d}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim Time Population"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dim Time Population\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim Time Population\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Time Population\Derived Column.Inputs[Derived Column Input].Columns[StartDate]"
+                      cachedDataType="dbDate"
+                      cachedName="StartDate"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[StartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Dim Time Population\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Month]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[MONTH](#{Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[StartDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">MONTH(StartDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Quarter]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[CEILING]([MONTH](#{Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[StartDate]}) / 4) + 1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">CEILING(MONTH(StartDate) / 4) + 1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Day]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[DAY](#{Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[StartDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">DAY(StartDate)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[YEAR](#{Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[StartDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">YEAR(StartDate)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Dim Time Population\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Time Population\Dim_Time Warehouse"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_Time Warehouse"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Time]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Time Population\Dim_Time Warehouse.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].Columns[Weekno]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Weekno"
+                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[WeekNo]"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[Weekno]" />
+                    <inputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarYear]"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].Columns[Quarter]"
+                      cachedDataType="i4"
+                      cachedName="Quarter"
+                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarQuarter]"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarMonth]"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].Columns[Day]"
+                      cachedDataType="i4"
+                      cachedName="Day"
+                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarDate]"
+                      lineageId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].Columns[SpecialEvents]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SpecialEvents"
+                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[HolidayList]"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[SpecialEvents]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                      dataType="i4"
+                      name="TimeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarYear]"
+                      dataType="i4"
+                      name="CalendarYear" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarQuarter]"
+                      dataType="i4"
+                      name="CalendarQuarter" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarMonth]"
+                      dataType="i4"
+                      name="CalendarMonth" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[WeekNo]"
+                      dataType="i4"
+                      name="WeekNo" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[CalendarDate]"
+                      dataType="i4"
+                      name="CalendarDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[HolidayList]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HolidayList" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Time Population\Dim_Time Warehouse.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Time Population\Dim_Time Warehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Time Population\Dim_Time Warehouse.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Time Population\Week Table From Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Week Table From Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Weeks_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Time Population\Week Table From Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[Weekno]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[Weekno]"
+                      length="50"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[Weekno]"
+                      name="Weekno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      name="EndDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[SpecialEvents]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[SpecialEvents]"
+                      length="50"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].Columns[SpecialEvents]"
+                      name="SpecialEvents"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[Weekno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Weekno" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[SpecialEvents]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SpecialEvents" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[Weekno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[Weekno]"
+                      name="Weekno" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      name="StartDate" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      name="EndDate" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[SpecialEvents]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[SpecialEvents]"
+                      name="SpecialEvents" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dim Time Population.Paths[Derived Column Output]"
+              endId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Dim Time Population\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dim Time Population.Paths[OLE DB Source Output]"
+              endId="Package\Dim Time Population\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="218.4,41.6"
+          Id="Package\Dim StorePriceTier Population"
+          TopLeft="43.2499976371026,178.044117451333" />
+        <NodeLayout
+          Size="200.8,41.6"
+          Id="Package\Dim Promotion Population"
+          TopLeft="584.321435422923,181.623527277548" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Dim Time Population"
+          TopLeft="819.785728365792,183.638237409567" />
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\Dim Product Category Population"
+          TopLeft="314.971425992616,179.817647326942" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dim StorePriceTier Population">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Dim StorePriceTier Population\Store Price Tier Staging"
+          TopLeft="284.214285811599,130.970587666884" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Dim StorePriceTier Population\Conditional Split"
+          TopLeft="295.71429075027,245.376473087093" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Dim StorePriceTier Population\Dim_StorePriceTier"
+          TopLeft="293.285714784447,347.176471081572" />
+        <EdgeLayout
+          Id="Package\Dim StorePriceTier Population.Paths[Price Tier Not Null]"
+          TopLeft="375.300002767359,286.976473087093">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.199997994479"
+              Start="0,0"
+              End="0,52.699997994479">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.699997994479" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-40.24712890625,21.4754872784895,80.4942578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim StorePriceTier Population.Paths[OLE DB Source Output]"
+          TopLeft="375.964288280935,172.570587666884">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.8058854202086"
+              Start="0,0"
+              End="0,65.3058854202086">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.3058854202086" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,24.6529427101043,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim StorePriceTier Population\Store Price Tier Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim StorePriceTier Population\Dim_StorePriceTier">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim Product Category Population">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Dim Product Category Population\TempTable"
+          TopLeft="252.642861351675,300.382356684101" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Dim Product Category Population\Category Staging Table"
+          TopLeft="231.21428904728,30.9117646415341" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Dim Product Category Population\Derived Column"
+          TopLeft="249.285718531025,201.48235540786" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Dim Product Category Population\Conditional Split"
+          TopLeft="245.714289898775,106.294119137794" />
+        <EdgeLayout
+          Id="Package\Dim Product Category Population.Paths[OLE DB Source Output]"
+          TopLeft="324.064289473028,72.5117646415341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7823544962596"
+              Start="0,0"
+              End="0,26.2823544962596">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2823544962596" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Product Category Population.Paths[UPC Cleaned]"
+          TopLeft="324.3000042149,147.894119137794">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.5882362700665"
+              Start="0,0"
+              End="0,46.0882362700665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.0882362700665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-37.361640625,15.0441181350332,74.72328125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Product Category Population.Paths[Transformed Data]"
+          TopLeft="321.96428994135,243.08235540786">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.3000012762411"
+              Start="0,0"
+              End="0,49.8000012762411">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.8000012762411" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.12701171875,16.9000006381205,98.2540234375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Dim Promotion Population">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Dim Promotion Population\Product Staging Table"
+          TopLeft="343.285714018102,142.647058566136" />
+        <NodeLayout
+          Size="191.2,41.6"
+          Id="Package\Dim Promotion Population\Fix Data Type Mismatch"
+          TopLeft="336.428577157916,214.42353183555" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Dim Promotion Population\Dim_Promotion"
+          TopLeft="355.42857136775,286.588235540786" />
+        <EdgeLayout
+          Id="Package\Dim Promotion Population.Paths[OLE DB Source Output]"
+          TopLeft="433.057145588009,184.247058566136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.1764732694135"
+              Start="0,0"
+              End="0,22.6764732694135">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6764732694135" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Promotion Population.Paths[Data Conversion Output]"
+          TopLeft="431.528574262833,256.02353183555">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5647037052364"
+              Start="0,0"
+              End="0,23.0647037052364">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0647037052364" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Dim Time Population">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Dim Time Population\Week Table From Staging"
+          TopLeft="119.285705503152,31.6470576545359" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Dim Time Population\Derived Column"
+          TopLeft="145.714288195785,124.800001458561" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Dim Time Population\Dim_Time Warehouse"
+          TopLeft="135.714288025486,220.235297206364" />
+        <EdgeLayout
+          Id="Package\Dim Time Population.Paths[OLE DB Source Output]"
+          TopLeft="220.699996849469,73.2470576545359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.5529438040249"
+              Start="0,0"
+              End="0,44.0529438040249">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.0529438040249" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Time Population.Paths[Derived Column Output]"
+          TopLeft="224.514288110636,166.400001458561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.8352957478032"
+              Start="0,0"
+              End="0,46.3352957478032">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.3352957478032" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Time Population\Week Table From Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Time Population\Dim_Time Warehouse">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Product Category Population\TempTable">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Product Category Population\Category Staging Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelinePath
+    design-time-name="Package\Dim Product Category Population.Paths[Transformed Data]">
+    <PathAnnotation>PathName</PathAnnotation>
+  </PipelinePath>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
