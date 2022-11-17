@@ -7,12 +7,12 @@
   DTS:CreatorName="LAPTOP-ULSN1LR1\Neel Bedarkar"
   DTS:DTSID="{3FF8B148-9F56-4075-9884-69B232503195}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{3171E820-3327-40F5-B740-AE677AE137EC}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{E367B235-F11F-480C-9B1C-100FAAC75324}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -83,7 +83,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT Store_Staging.PriceTier, Product_Staging.UPC, Product_Staging.Weekno, AVG(Product_Staging.QtySld) as QtySld, AVG(Product_Staging.Profit) as Profit
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Store_Staging.PriceTier, Product_Staging.UPC, Product_Staging.Weekno, AVG(Product_Staging.QtySld) as QtySld, AVG(Product_Staging.Profit) as Profit
 FROM Store_Staging INNER JOIN
 Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_Staging.PriceTier, Product_Staging.UPC, Product_Staging.Weekno</property>
                 <property
@@ -287,7 +287,7 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -517,7 +517,7 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -684,7 +684,7 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT pc.PCKey, Dim_StorePriceTier.StorePriceTierKey, Dim_Time.TimeKey, tmp.QuantitySold, tmp.ProfitMargin
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT pc.PCKey, Dim_StorePriceTier.StorePriceTierKey, Dim_Time.TimeKey, tmp.QuantitySold, tmp.ProfitMargin
 FROM     [602-Group6-staging-area].dbo.TmpStorePriceTierDM AS tmp INNER JOIN
                   Dim_ProductCategory AS pc ON tmp.UPC = pc.UPC INNER JOIN
                   Dim_StorePriceTier ON tmp.StorePriceTier = Dim_StorePriceTier.PriceTier INNER JOIN
@@ -904,17 +904,21 @@ FROM     [602-Group6-staging-area].dbo.TmpStorePriceTierDM AS tmp INNER JOIN
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="177.6,41.6"
+          Size="178,42"
           Id="Package\Calculate Aggregates"
           TopLeft="159.285716998334,146.058825577832" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Create Temp Table"
           TopLeft="163.571431357034,43.5882359054261" />
         <NodeLayout
-          Size="160,41.6"
+          Size="160,42"
           Id="Package\Drop Temp Table"
           TopLeft="161.428574177684,345.82353420571" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Move Temp to Data Mart SQL"
+          TopLeft="135.000002299036,236.294120960995" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="247.828574177684,85.1882359054261">
@@ -937,10 +941,6 @@ FROM     [602-Group6-staging-area].dbo.TmpStorePriceTierDM AS tmp INNER JOIN
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="218.4,41.6"
-          Id="Package\Move Temp to Data Mart SQL"
-          TopLeft="135.000002299036,236.294120960995" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="246.142859648685,187.658825577832">
@@ -994,11 +994,11 @@ FROM     [602-Group6-staging-area].dbo.TmpStorePriceTierDM AS tmp INNER JOIN
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="134.4,41.6"
+          Size="134,42"
           Id="Package\Calculate Aggregates\Temp Table"
           TopLeft="199.857145971182,171.670591495607" />
         <NodeLayout
-          Size="260.8,41.6"
+          Size="261,42"
           Id="Package\Calculate Aggregates\Staging Product, Week, And Store Info"
           TopLeft="135.714288025486,41.4352946538826" />
         <EdgeLayout
