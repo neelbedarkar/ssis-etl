@@ -1,0 +1,754 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/16/2022 9:21:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LABS-153-15"
+  DTS:CreatorName="AUTH\harsh_chaudhari"
+  DTS:DTSID="{2579FA07-238C-41B4-84EF-4807C00DFA4B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Fact Table Manufacturer Sale"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{60884B59-6DC0-47E0-A69B-09297BD7BE19}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{36A58EB5-3703-4A08-9DC5-2799AD9B8686}"
+      DTS:ObjectName="infodata16.mbs.tamu.edu.602-Group6-dw-area">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=infodata16.mbs.tamu.edu;Initial Catalog=602-Group6-dw-area;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CA385F1F-DAB4-440F-924C-BE9956487325}"
+      DTS:ObjectName="infodata16.mbs.tamu.edu.602-Group6-dw-area 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=infodata16.mbs.tamu.edu;Initial Catalog=602-Group6-dw-area;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-staging-area]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C34F024B-1236-42D8-81FF-B4B63B6B576A}"
+      DTS:ObjectName="infodata16.mbs.tamu.edu.602-Group6-staging-area">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=infodata16.mbs.tamu.edu;Initial Catalog=602-Group6-staging-area;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.chaudhari-staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{44A05F77-6661-4866-B0E8-95DC1A348CFB}"
+      DTS:ObjectName="infodata16.mbs.tamu.edu.chaudhari-staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=infodata16.mbs.tamu.edu;Initial Catalog=chaudhari-staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create Temp Fact ManufSales Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C910F413-D4C7-49C8-BFFE-C17F91D01ADC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Temp Fact ManufSales Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C34F024B-1236-42D8-81FF-B4B63B6B576A}"
+          SQLTask:SqlStatementSource="select   &#xA;  categorycode, &#xA;  weekno, &#xA;  manuf_code,&#xA;  manuf_upc,&#xA;  qty_prod_sold,&#xA;cnt_manuf, &#xA;  sum_delt_manuf &#xA;&#xA;  into temp_Fact_ManufacturerSales&#xA;&#xA;from &#xA;  (&#xA;    Select &#xA;      *, &#xA;      sum(cnt_manuf - old_cnt_manuf) over (partition by categorycode, weekno) as sum_delt_manuf &#xA;    from &#xA;      (&#xA;        select &#xA;          *, &#xA;          lag(cnt_manuf) over (&#xA;            partition by categorycode &#xA;            order by &#xA;              weekno&#xA;          ) as old_cnt_manuf, &#xA;          cnt_manuf -(&#xA;            lag(cnt_manuf) over (&#xA;              partition by categorycode &#xA;              order by &#xA;                weekno&#xA;            )&#xA;          ) as delt_manuf &#xA;        from &#xA;          (&#xA;            select &#xA;              categorycode, &#xA;              weekno, &#xA;              manuf_code,&#xA;&#x9;&#x9;&#x9;  manuf_upc,&#xA;              count(manuf_code) over (partition by categorycode, weekno) as cnt_manuf, &#xA;              sum(QtySld) as qty_prod_sold &#xA;            from &#xA;              (&#xA;                select &#xA;                  Weekno, &#xA;                  CategoryCode, &#xA;                  manuf_code,&#xA;&#x9;&#x9;&#x9;&#x9;  manuf_upc,&#xA;                  sum(QtySld) as QtySld&#xA;&#xA;                FROM &#xA;                  [TEMP_prd_cat] &#xA;                group by &#xA;                  Weekno, &#xA;                  CategoryCode, &#xA;                  manuf_code,&#xA;&#x9;&#x9;&#x9;&#x9;  manuf_upc&#xA;              ) a &#xA;            group by &#xA;              Weekno, &#xA;              CategoryCode, &#xA;              manuf_code,&#xA;&#x9;&#x9;&#x9;  manuf_upc&#xA;          ) a&#xA;      ) a&#xA;  ) a &#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Temp Prd-Cat Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8447cbb7-1972-4fac-826b-e523968d6f92}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Temp Prd-Cat Table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C34F024B-1236-42D8-81FF-B4B63B6B576A}"
+          SQLTask:SqlStatementSource="select *, max(cat_upc) over (partition by CategoryCode, manuf_code order by CategoryCode)as manuf_upc into TEMP_prd_cat from&#xA;(&#xA;select&#xA;&#x9;&#x9;&#xA;&#x9;   cat.[CategoryCode]&#xA;      ,cat.[UPC] as cat_upc,&#xA;&#x9;  replace(cat.[UPC],substring(cat.[UPC], LEN(cat.[UPC])-5,5),'') as manuf_code &#xA;      ,cat.[CommodityCode]&#xA;      ,cat.[ProductName]&#xA;      ,cat.[ItemNumber]&#xA;&#x9;  ,prod.[UPC] as prod_upc&#xA;      ,prod.[Store]&#xA;      ,prod.[Weekno]&#xA;      ,prod.[QtySld]&#xA;      ,prod.[QtyBundle]&#xA;      ,prod.[Price]&#xA;      ,prod.[Profit]&#xA;&#x9;  ,REPLACE(PromotionType,'&quot;','') as PromotionType&#xA;&#x9;  ,CASE WHEN REPLACE(PromotionType,'&quot;','') = 'B' then 'Bonus Buy'&#xA;&#x9;&#x9;&#x9;WHEN REPLACE(PromotionType,'&quot;','') = 'C' then 'Coupon'&#xA;&#x9;&#x9;&#x9;WHEN REPLACE(PromotionType,'&quot;','') = 'S' then 'Sale' &#xA;&#x9;&#x9;&#x9;ELSE 'Not Available' &#xA;&#x9;   END as PromotionName &#xA;&#xA;from (select * from Product_Staging) prod&#xA;Right JOIN &#xA;(select * from Category_Staging) cat&#xA;ON cat.UPC = prod.upc &#xA;&#xA;) a WHERE prod_upc is not null&#xA;and cat_upc is not null&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Existing Temp Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1a033ee4-d670-47fd-90d5-953f7bbfaadb}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Existing Temp Table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C34F024B-1236-42D8-81FF-B4B63B6B576A}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="drop table if exists [dbo].[TEMP_prd_cat];&#xA;drop table if exists [dbo].[temp_Fact_ManufacturerSales];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Temp Fact_ManufacturerSales"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{372206a2-3e18-4d39-a50c-238577901c34}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Temp Fact_ManufacturerSales"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C34F024B-1236-42D8-81FF-B4B63B6B576A}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="drop table if exists [dbo].[temp_Fact_ManufacturerSales];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move Temp Fact ManufSales to Data Mart SQL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{edd3f5e4-5bc4-45f5-8ad7-dca80bdad9ec}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move Temp Fact ManufSales to Data Mart SQL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Store Price Data Mart"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_StorePriceTierSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[QuantitySold]"
+                      cachedDataType="numeric"
+                      cachedName="QuantitySold"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[QuantitySold]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]" />
+                    <inputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[ProfitMargin]"
+                      cachedDataType="numeric"
+                      cachedName="ProfitMargin"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[ProfitMargin]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]" />
+                    <inputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[TimeKey]"
+                      cachedDataType="i4"
+                      cachedName="TimeKey"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[TimeKey]" />
+                    <inputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[PCKey]"
+                      cachedDataType="i4"
+                      cachedName="PCKey"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[PCKey]" />
+                    <inputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[StorePriceTierKey]"
+                      cachedDataType="i4"
+                      cachedName="StorePriceTierKey"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[StorePTKey]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[StorePTKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="StorePTKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[QuantitySold]"
+                      dataType="numeric"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[ProfitMargin]"
+                      dataType="numeric"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Temp Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[TmpStoreDM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+dimcat.PCKey,
+dimweek.TimeKey,
+fact.cnt_manuf,
+fact.qty_prod_sold,
+fact.sum_delt_manuf
+
+from
+		[602-Group6-staging-area].[dbo].[temp_Fact_ManufacturerSales] fact
+
+INNER JOIN
+		[602-Group6-dw-area].[dbo].[Dim_ProductCategory] dimcat
+		ON fact.manuf_upc = dimcat.UPC AND fact.categorycode = dimcat.CategoryCode AND fact.manuf_code = replace(dimcat.ManufacturerID ,substring(dimcat.ManufacturerID , LEN(dimcat.ManufacturerID )-5,5),'')
+		
+INNER JOIN		
+		[602-Group6-dw-area].[dbo].[Dim_Time] dimweek
+		ON fact.weekno = dimweek.WeekNo;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[QuantitySold]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[ProfitMargin]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[PCKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[PCKey]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[PCKey]"
+                      name="PCKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTierKey]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]"
+                      name="StorePriceTierKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[TimeKey]"
+                      name="TimeKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[QuantitySold]"
+                      dataType="numeric"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[ProfitMargin]"
+                      dataType="numeric"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[PCKey]"
+                      dataType="i4"
+                      name="PCKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTierKey]"
+                      dataType="i4"
+                      name="StorePriceTierKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
+                      dataType="i4"
+                      name="TimeKey" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[PCKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[PCKey]"
+                      name="PCKey" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[StorePriceTierKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[StorePriceTierKey]"
+                      name="StorePriceTierKey" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
+                      name="TimeKey" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[QuantitySold]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[QuantitySold]"
+                      name="QuantitySold"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ProfitMargin]"
+                      dataType="numeric"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ProfitMargin]"
+                      name="ProfitMargin"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Move Temp Fact ManufSales to Data Mart SQL.Paths[OLE DB Source Output]"
+              endId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{679AD69D-9FE7-4A1C-8D3C-BC0FC8CB6CA9}"
+      DTS:From="Package\Drop Existing Temp Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create Temp Prd-Cat Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{89A94FF1-86B1-46DE-9A49-145A63BAB2B0}"
+      DTS:From="Package\Create Temp Prd-Cat Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Create Temp Fact ManufSales Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{93F1EE4E-E400-4FA0-83DE-ED20F18B8644}"
+      DTS:From="Package\Create Temp Fact ManufSales Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Move Temp Fact ManufSales to Data Mart SQL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB61AEA7-E1C4-444F-B24A-0928A813E525}"
+      DTS:From="Package\Move Temp Fact ManufSales to Data Mart SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Drop Temp Fact_ManufacturerSales" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Create Temp Fact ManufSales Table"
+          TopLeft="162,233" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Create Temp Prd-Cat Table"
+          TopLeft="167.571429057998,154" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Drop Existing Temp Table"
+          TopLeft="146.428571878648,63.235298300284" />
+        <NodeLayout
+          Size="298,42"
+          Id="Package\Move Temp Fact ManufSales to Data Mart SQL"
+          TopLeft="105,335" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="249.250000468323,105.235298300284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.764701699716"
+              Start="0,0"
+              End="0,41.264701699716">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.264701699716" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="254.785714528999,196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="256,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Drop Temp Fact_ManufacturerSales"
+          TopLeft="131,437" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="254.25,377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Move Temp Fact ManufSales to Data Mart SQL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart"
+          TopLeft="146.730165605642,236.588240463428" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table"
+          TopLeft="167.285709930926,119.294117679233" />
+        <EdgeLayout
+          Id="Package\Move Temp Fact ManufSales to Data Mart SQL.Paths[OLE DB Source Output]"
+          TopLeft="235.507937768284,161.294117679233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.294122784195"
+              Start="0,0"
+              End="0,67.794122784195">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.794122784195" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
