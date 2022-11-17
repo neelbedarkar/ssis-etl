@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{24259CD0-3CA5-456F-885A-0CC3069F4356}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{3171E820-3327-40F5-B740-AE677AE137EC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -46,8 +46,8 @@
     <DTS:Executable
       DTS:refId="Package\Calculate Aggregates"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{47A02365-50AF-4D92-8EBC-99FAEA75B398}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -278,7 +278,7 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[TmpStoreDM]</property>
+                  name="OpenRowset">[dbo].[TmpStorePriceTierDM]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -377,7 +377,9 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Calculate Aggregates\Temp Table.Inputs[OLE DB Destination Input].ExternalColumns[Week]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Week" />
                     <externalMetadataColumn
                       refId="Package\Calculate Aggregates\Temp Table.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
@@ -446,7 +448,6 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
       DTS:refId="Package\Create Temp Table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{B61BE322-C91C-4D3D-A241-9F4B42169CDB}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -456,8 +457,7 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BCBABB4F-EF21-4E91-80FF-999B6BB36544}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[TmpStoreDM](&#xA;&#x9;[Week] [char](50) NULL,&#xA;&#x9;[UPC] [char](50) NULL,&#xA;&#x9;[StorePriceTier] [char](10) NULL,&#xA;&#x9;[QuantitySold] [decimal](18, 2) NULL,&#xA;&#x9;[ProfitMargin] [decimal](18, 2) NULL&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="CREATE TABLE [TmpStorePriceTierDM]&#xA; (&#xA;&#x9;[Week] [char](50) NULL,&#xA;&#x9;[UPC] [char](50) NULL,&#xA;&#x9;[StorePriceTier] [char](10) NULL,&#xA;&#x9;[QuantitySold] [decimal](18, 2) NULL,&#xA;&#x9;[ProfitMargin] [decimal](18, 2) NULL&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -474,14 +474,14 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BCBABB4F-EF21-4E91-80FF-999B6BB36544}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DROP TABLE [dbo].[TmpStoreDM]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DROP TABLE [dbo].[TmpStorePriceTierDM]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Move Temp to Data Mart SQL"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{684f42d9-2881-436c-8ea9-42d9c95ec926}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -685,7 +685,7 @@ Product_Staging ON Store_Staging.Store = Product_Staging.Store GROUP BY Store_St
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT pc.PCKey, Dim_StorePriceTier.StorePriceTierKey, Dim_Time.TimeKey, tmp.QuantitySold, tmp.ProfitMargin
-FROM     [602-Group6-staging-area].dbo.TmpStoreDM AS tmp INNER JOIN
+FROM     [602-Group6-staging-area].dbo.TmpStorePriceTierDM AS tmp INNER JOIN
                   Dim_ProductCategory AS pc ON tmp.UPC = pc.UPC INNER JOIN
                   Dim_StorePriceTier ON tmp.StorePriceTier = Dim_StorePriceTier.PriceTier INNER JOIN
                   Dim_Time ON tmp.Week = Dim_Time.WeekNo</property>
@@ -914,7 +914,7 @@ FROM     [602-Group6-staging-area].dbo.TmpStoreDM AS tmp INNER JOIN
         <NodeLayout
           Size="160,41.6"
           Id="Package\Drop Temp Table"
-          TopLeft="162.142859904134,345.82353420571" />
+          TopLeft="161.428574177684,345.82353420571" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="247.828574177684,85.1882359054261">
@@ -940,21 +940,21 @@ FROM     [602-Group6-staging-area].dbo.TmpStoreDM AS tmp INNER JOIN
         <NodeLayout
           Size="218.4,41.6"
           Id="Package\Move Temp to Data Mart SQL"
-          TopLeft="135.000002299036,237.058826854072" />
+          TopLeft="135.000002299036,236.294120960995" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="246.142859648685,187.658825577832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.4000012762402"
+              EndConnector="0,48.6352953831626"
               Start="0,0"
-              End="0,41.9000012762402">
+              End="0,41.1352953831626">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.9000012762402" />
+                    End="0,41.1352953831626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -965,18 +965,18 @@ FROM     [602-Group6-staging-area].dbo.TmpStoreDM AS tmp INNER JOIN
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="243.171431101585,278.658826854072">
+          TopLeft="242.81428823836,277.894120960995">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.1647073516378"
+              EndConnector="0,67.9294132447154"
               Start="0,0"
-              End="0,59.6647073516378">
+              End="0,60.4294132447154">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.6647073516378" />
+                    End="0,60.4294132447154" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -992,7 +992,7 @@ FROM     [602-Group6-staging-area].dbo.TmpStoreDM AS tmp INNER JOIN
     design-time-name="Package\Calculate Aggregates">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="134.4,41.6"
           Id="Package\Calculate Aggregates\Temp Table"
@@ -1020,9 +1020,7 @@ FROM     [602-Group6-staging-area].dbo.TmpStoreDM AS tmp INNER JOIN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
