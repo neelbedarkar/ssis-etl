@@ -7,12 +7,12 @@
   DTS:CreatorName="AUTH\harsh_chaudhari"
   DTS:DTSID="{2579FA07-238C-41B4-84EF-4807C00DFA4B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact Table Manufacturer Sale"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{7A0EEAC8-41B2-4520-A43D-00A27DCCCF42}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{1C1285A0-97B7-4E6A-8C20-F7A07596711B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -121,6 +121,7 @@
       DTS:refId="Package\Drop Temp Fact_ManufacturerSales"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{372206a2-3e18-4d39-a50c-238577901c34}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -174,7 +175,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -327,7 +328,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
 dimcat.PCKey,
 dimweek.TimeKey,
 fact.cnt_manuf,
@@ -555,23 +556,23 @@ INNER JOIN
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\Create Temp Fact ManufSales Table"
           TopLeft="162,233" />
         <NodeLayout
-          Size="168,42"
+          Size="168,41.6"
           Id="Package\Create Temp Prd-Cat Table"
           TopLeft="167.571429057998,154" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Drop Existing Temp Table"
           TopLeft="146.428571878648,63.235298300284" />
         <NodeLayout
-          Size="247,42"
+          Size="247.2,41.6"
           Id="Package\Drop Temp Fact_ManufacturerSales"
           TopLeft="131,437" />
         <NodeLayout
-          Size="298,42"
+          Size="297.6,41.6"
           Id="Package\Move Temp Fact ManufSales to Data Mart SQL"
           TopLeft="105,335" />
         <EdgeLayout

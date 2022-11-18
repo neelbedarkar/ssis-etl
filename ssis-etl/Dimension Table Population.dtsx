@@ -7,12 +7,12 @@
   DTS:CreatorName="LAPTOP-ULSN1LR1\Neel Bedarkar"
   DTS:DTSID="{FCB9317E-92D6-43D1-A29A-891D7079534F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Dimension Population Alex"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{F8EEC869-3A06-4751-B877-7F545AC5CADA}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{DC471487-D153-472D-A39A-67E9DF9B108F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -82,7 +82,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -752,7 +752,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -984,7 +984,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1043,7 +1043,7 @@
                       refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].Columns[Trimmed PromotionType]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="5"
                       cachedName="Trimmed PromotionType"
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
@@ -1059,13 +1059,13 @@
                       refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionID]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="5"
                       name="PromotionID" />
                     <externalMetadataColumn
                       refId="Package\Dim Promotion Population\Dim_Promotion.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="15"
                       name="PromotionName" />
                   </externalMetadataColumns>
                 </input>
@@ -1131,7 +1131,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="10"
+                      length="5"
                       lineageId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Output].Columns[Trimmed PromotionType]"
                       name="Trimmed PromotionType"
                       truncationRowDisposition="FailComponent">
@@ -1199,7 +1199,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM (SELECT DISTINCT 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM (SELECT DISTINCT 
                   REPLACE(PromotionType, '"', '') AS PromotionType, CASE WHEN REPLACE(PromotionType, '"', '') = 'B' THEN 'Bonus Buy' WHEN REPLACE(PromotionType, '"', '') = 'C' THEN 'Coupon' WHEN REPLACE(PromotionType, '"', '') 
                   = 'S' THEN 'Sale' ELSE 'Not Available' END AS PromotionName
 FROM     Product_Staging) as A
@@ -1377,7 +1377,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                       refId="Package\Dim Promotion Population\Sort By PromotionType.Inputs[Sort Input].Columns[Trimmed PromotionType]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="5"
                       cachedName="Trimmed PromotionType"
                       lineageId="Package\Dim Promotion Population\Fix Data Type Mismatch.Outputs[Data Conversion Output].Columns[Trimmed PromotionType]">
                       <properties>
@@ -1435,7 +1435,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                       refId="Package\Dim Promotion Population\Sort By PromotionType.Outputs[Sort Output].Columns[Trimmed PromotionType]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="5"
                       lineageId="Package\Dim Promotion Population\Sort By PromotionType.Outputs[Sort Output].Columns[Trimmed PromotionType]"
                       name="Trimmed PromotionType"
                       sortKeyPosition="1">
@@ -1603,7 +1603,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1797,7 +1797,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT PriceTier
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT PriceTier
 FROM     Store_Staging</property>
                 <property
                   dataType="System.String"
@@ -2091,7 +2091,7 @@ FROM     Store_Staging</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2108,7 +2108,7 @@ FROM     Store_Staging</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
+                  name="FastLoadKeepIdentity">true</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
@@ -2177,7 +2177,7 @@ FROM     Store_Staging</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="SpecialEvents"
-                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[HolidayList]"
+                      externalMetadataColumnId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[HolidayName]"
                       lineageId="Package\Dim Time Population\Sort by Week number.Outputs[Sort Output].Columns[SpecialEvents]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -2207,11 +2207,11 @@ FROM     Store_Staging</property>
                       dataType="i4"
                       name="CalendarDate" />
                     <externalMetadataColumn
-                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[HolidayList]"
+                      refId="Package\Dim Time Population\Dim_Time Warehouse.Inputs[OLE DB Destination Input].ExternalColumns[HolidayName]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="HolidayList" />
+                      name="HolidayName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2544,7 +2544,7 @@ FROM     Store_Staging</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2625,9 +2625,7 @@ FROM     Store_Staging</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[Weekno]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Weekno" />
                     <externalMetadataColumn
                       refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
@@ -2654,9 +2652,7 @@ FROM     Store_Staging</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[Weekno]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Dim Time Population\Week Table From Staging.Outputs[OLE DB Source Error Output].Columns[Weekno]"
                       name="Weekno" />
                     <outputColumn
@@ -2730,19 +2726,19 @@ FROM     Store_Staging</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="234,42"
+          Size="233.6,41.6"
           Id="Package\Dim Product Category Population"
           TopLeft="309.614283044242,179.817647326942" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Dim Promotion Population"
           TopLeft="584.321435422923,181.623527277548" />
         <NodeLayout
-          Size="218,42"
+          Size="217.6,41.6"
           Id="Package\Dim StorePriceTier Population"
           TopLeft="43.2499976371026,178.044117451333" />
         <NodeLayout
-          Size="176,42"
+          Size="176,41.6"
           Id="Package\Dim Time Population"
           TopLeft="819.785728365792,183.638237409567" />
       </GraphLayout>
@@ -2902,19 +2898,23 @@ FROM     Store_Staging</property>
     design-time-name="Package\Dim Promotion Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182,42"
+          Size="182.4,41.6"
           Id="Package\Dim Promotion Population\Product Staging Table"
           TopLeft="344.285714018102,104.647058566136" />
         <NodeLayout
-          Size="187,42"
+          Size="187.2,41.6"
           Id="Package\Dim Promotion Population\Sort By PromotionType"
           TopLeft="346,254.4" />
         <NodeLayout
-          Size="191,42"
+          Size="191.2,41.6"
           Id="Package\Dim Promotion Population\Fix Data Type Mismatch"
           TopLeft="337.428577157916,176.42353183555" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Dim Promotion Population\Dim_Promotion"
+          TopLeft="361.42857136775,346.588235540786" />
         <EdgeLayout
           Id="Package\Dim Promotion Population.Paths[OLE DB Source Output]"
           TopLeft="434.057145588009,146.247058566136">
@@ -2934,9 +2934,7 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.55857421875,6.62729913470675,31.1171484375,9.421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2958,15 +2956,9 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.55857421875,9.72729658222505,31.1171484375,9.421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Dim Promotion Population\Dim_Promotion"
-          TopLeft="361.42857136775,346.588235540786" />
         <EdgeLayout
           Id="Package\Dim Promotion Population.Paths[Sort Output]"
           TopLeft="438.214285683875,296.4">
@@ -2986,9 +2978,7 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15.55857421875,16.633180270393,31.1171484375,9.421875"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2999,6 +2989,19 @@ FROM     Store_Staging</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Promotion Population\Dim_Promotion">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -3128,7 +3131,7 @@ FROM     Store_Staging</property>
     design-time-name="Package\Dim Time Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\Dim Time Population\Sort by Week number"
@@ -3164,9 +3167,7 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3188,9 +3189,7 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3212,9 +3211,7 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

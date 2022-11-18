@@ -7,12 +7,12 @@
   DTS:CreatorName="LAPTOP-ULSN1LR1\Neel Bedarkar"
   DTS:DTSID="{6099AAC1-BF9A-4677-BB1F-516659566945}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{2297652C-0BA8-4677-81D1-3048557F1CFC}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{C4BEE71C-298C-4AA0-85B8-CBAB055F7AEB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\db_write_log_upc.csv">
+          DTS:ConnectionString="C:\Users\Sunita Mandrupkar\Documents\Notes\ISTM 637 Data warehousing\Project\Logs\db_write_log_upc.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="COM_CODE"
-              DTS:DTSID="{A1A1EDAC-FCB6-4036-AF6F-B6BEECA4E419}"
+              DTS:DTSID="{853420B5-5298-40C3-85D9-9004C152B270}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="UPC"
-              DTS:DTSID="{4A1918D1-A0A1-456D-A7EC-5A775EA56402}"
+              DTS:DTSID="{B6061EFA-7C24-417C-80E4-6AEA2841A5BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DESCRIP"
-              DTS:DTSID="{A613C977-6B4E-418C-A42B-419D3C347856}"
+              DTS:DTSID="{7E3927E7-752A-47E0-823F-52EA6A44DA01}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SIZE"
-              DTS:DTSID="{9248A8F5-B592-49D9-9577-1BE6ED7409FF}"
+              DTS:DTSID="{22F86339-162B-44AA-B2D2-FA37F4C7B66C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CASE"
-              DTS:DTSID="{10F69254-A605-4D20-8AA4-A0684528EAAA}"
+              DTS:DTSID="{D7022056-8BC4-4F39-91DC-FCA4B9F211FF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +83,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NITEM"
-              DTS:DTSID="{7718D8CF-2D06-4631-B23B-9F4734A533E8}"
+              DTS:DTSID="{BA8493E6-D6F6-46F7-8C00-17DF33D3403D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{177FEA7F-8B15-4723-8F3E-7F2D7E449FD5}"
+              DTS:DTSID="{19469AEA-D065-40D6-A424-4B597D1F743A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{CB62916F-C97D-4BD9-80F8-44324FB5C7BF}"
+              DTS:DTSID="{29D3933B-6351-4AA4-9600-5A891C669F9E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -118,7 +118,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\file_read_log.csv.txt">
+          DTS:ConnectionString="C:\Users\Sunita Mandrupkar\Documents\Notes\ISTM 637 Data warehousing\Project\Logs\file_read_log.csv.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -126,7 +126,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="Flat File Source Error Output Column"
-              DTS:DTSID="{ED752C03-CC98-444E-9BF4-C55CAC62C3FC}"
+              DTS:DTSID="{645C57F9-6700-410F-8298-5924163AAED5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -134,7 +134,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{D55EF685-6221-4EF2-89C7-7E9A18B4DF36}"
+              DTS:DTSID="{399A505A-118A-441D-96E7-9FB6B33D8DC5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -142,7 +142,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{2918A57A-B7BC-4AF2-9275-C359DA145821}"
+              DTS:DTSID="{2E8539F3-E0C8-4C33-B462-F4F39841F759}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -161,7 +161,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\db_write_log.csv">
+          DTS:ConnectionString="C:\Users\Sunita Mandrupkar\Documents\Notes\ISTM 637 Data warehousing\Project\Logs\db_write_log.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -170,7 +170,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="UPC"
-              DTS:DTSID="{DFEAF94A-C575-4041-9164-37C9B9EDBBA8}"
+              DTS:DTSID="{40D75633-406A-4D42-A429-1620B5FEC429}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -179,7 +179,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="STORE"
-              DTS:DTSID="{EE11EACA-2D24-46E3-B9D0-3110D794F262}"
+              DTS:DTSID="{C339B0A4-C10E-4591-A5A2-6B4943F5BE72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -188,7 +188,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="WEEK"
-              DTS:DTSID="{414BEE81-7233-426C-9643-94650E8360FA}"
+              DTS:DTSID="{8579E65B-7B21-4D13-BF24-DECC605A1F02}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -197,7 +197,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MOVE"
-              DTS:DTSID="{A15A44DB-8BD3-41B1-8947-CF412D67D7AA}"
+              DTS:DTSID="{C2DC5B6B-5450-4068-BBA5-D6B427A00FEA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -206,7 +206,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="QTY"
-              DTS:DTSID="{0FE88DC8-1A46-4B88-B30C-657CA5EF054D}"
+              DTS:DTSID="{507B1E18-9F04-4E0B-B9D5-94C68C71C531}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -215,7 +215,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PRICE"
-              DTS:DTSID="{8E6DFC8E-44AD-4B52-9993-650E404BABFB}"
+              DTS:DTSID="{FD038158-8DAE-4292-82C8-BEB705EFD75F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -224,7 +224,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SALE"
-              DTS:DTSID="{2B210579-42E6-4BD7-B1B7-7333E610CEA3}"
+              DTS:DTSID="{F5EEC296-CFC4-4384-87B7-19D1D75C3A6B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -233,7 +233,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PROFIT"
-              DTS:DTSID="{CBBB8533-1008-4924-8A28-6ED7F3874E7F}"
+              DTS:DTSID="{3E2C6E00-5F72-4014-82A4-8DE38BCA5E49}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -242,7 +242,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OK"
-              DTS:DTSID="{DB7B34BA-6EC8-4FA4-89ED-E846AEC3AEE8}"
+              DTS:DTSID="{15A63C9E-33E7-4458-B069-FEE132D1C6EA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -250,7 +250,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{7C111675-B018-4565-AB25-9EF7646829E1}"
+              DTS:DTSID="{3AF9243B-22EE-4EC9-9DEC-A3713FFBDEFA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -258,7 +258,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{D2E1C5ED-4828-43D1-A476-24EC2B18FAAB}"
+              DTS:DTSID="{74C92545-F347-4469-9838-32413313DB64}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -788,7 +788,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\Users\nebedarkar\Documents\DFF data - zipped\Movement" />
+              Folder="C:\Users\Sunita Mandrupkar\Documents\Notes\ISTM 637 Data warehousing\Project\Movement To Load" />
             <FEFEProperty
               FileSpec="*.*" />
             <FEFEProperty
@@ -1522,7 +1522,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1717,11 +1717,6 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Loop for Movement\Movement Data Flow Task.Paths[Conditional Split Default Output]"
-                  endId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input]"
-                  name="Conditional Split Default Output"
-                  startId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Conditional Split Default Output]" />
-                <path
                   refId="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Error Output]"
                   endId="Package\Loop for Movement\Movement Data Flow Task\File Read Error.Inputs[Flat File Destination Input]"
                   name="Flat File Source Error Output"
@@ -1731,6 +1726,11 @@
                   endId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Inputs[Conditional Split Input]"
                   name="Flat File Source Output"
                   startId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Loop for Movement\Movement Data Flow Task.Paths[Ok_1]"
+                  endId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input]"
+                  name="Ok_1"
+                  startId="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check.Outputs[Ok_1]" />
                 <path
                   refId="Package\Loop for Movement\Movement Data Flow Task.Paths[OLE DB Destination Error Output]"
                   endId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input]"
@@ -1744,8 +1744,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{94E6F997-CD12-423A-85BD-EB5193A0DFDE}"
-          DTS:ObjectName="{94E6F997-CD12-423A-85BD-EB5193A0DFDE}"
+          DTS:DTSID="{F2EC74EF-5BE9-41A2-8D6B-5FDF03CAE734}"
+          DTS:ObjectName="{F2EC74EF-5BE9-41A2-8D6B-5FDF03CAE734}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::MovementFileName" />
       </DTS:ForEachVariableMappings>
@@ -1901,7 +1901,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2894,7 +2894,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3227,7 +3227,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3408,38 +3408,38 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="204,42"
+          Size="204,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task"
           TopLeft="86.114288536383,23.0882355407859" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="330,193"
-          Size="330,236"
+          PanelSize="329.6,192.8"
+          Size="329.6,236"
           Id="Package\Loop for Movement"
-          TopLeft="141.714288110636,474.08235431394" />
+          TopLeft="141.000002384186,474.08235431394" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task"
           TopLeft="84.114288536383,22.0882355407859" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="330,193"
-          Size="330,236"
+          PanelSize="329.6,192.8"
+          Size="329.6,236"
           Id="Package\Loop for UPC"
           TopLeft="138.714288110636,148.08235431394" />
         <NodeLayout
-          Size="184,42"
+          Size="184,41.6"
           Id="Package\Stores Data Flow Task"
           TopLeft="210.714285130404,889.470587666885" />
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\Weeks Data Flow Task"
           TopLeft="217.285714103251,782.470588213845" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="305.214288110636,384.08235431394">
+          TopLeft="304.657145247411,384.08235431394">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3461,18 +3461,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="308.300001106944,710.08235431394">
+          TopLeft="307.942858243719,710.08235431394">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72.3882338999047"
+              EndConnector="0,72.388233899905"
               Start="0,0"
-              End="0,64.8882338999047">
+              End="0,64.888233899905">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.8882338999047" />
+                    End="0,64.888233899905" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3512,23 +3512,23 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181,42"
+          Size="180.8,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1"
           TopLeft="621,399" />
         <NodeLayout
-          Size="137,42"
+          Size="136.8,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\ProductData"
           TopLeft="151,380.941176063049" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Source"
           TopLeft="361,114" />
         <NodeLayout
-          Size="147,42"
+          Size="147.2,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check"
           TopLeft="151,223" />
         <NodeLayout
-          Size="149,42"
+          Size="148.8,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\File Read Error"
           TopLeft="652,118" />
         <EdgeLayout
@@ -3626,26 +3626,26 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Conditional Split Default Output]"
-          TopLeft="222,265">
+          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Ok_1]"
+          TopLeft="222,264.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,115.941176063049"
+              EndConnector="0,116.341176063049"
               Start="0,0"
-              End="0,108.441176063049">
+              End="0,108.841176063049">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,108.441176063049" />
+                    End="0,108.841176063049" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.61390625,48.3914864690245,141.2278125,11.658203125"
+              BoundingBox="-11.9230859375,48.8893380315245,23.846171875,11.0625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

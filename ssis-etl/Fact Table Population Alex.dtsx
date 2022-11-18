@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/17/2022 12:57:26 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="AUTH\yuwan425"
   DTS:DTSID="{20D73E22-9E41-430D-801C-4F41548691A4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LastModifiedProductVersion="16.0.694.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{DE550775-04D4-4B30-8471-2AD88625C862}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{6EAE1234-7AF3-45FD-9E79-285A390CB996}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -75,6 +75,7 @@
       DTS:refId="Package\Drop Temp Table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{731C7318-FE04-4450-B51A-39E48261792E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -128,7 +129,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -273,7 +274,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT pc.PCKey, Dim_Promotion.PromotionKey, Dim_Time.TimeKey, tmp.QuantitySold
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT pc.PCKey, Dim_Promotion.PromotionKey, Dim_Time.TimeKey, tmp.QuantitySold
 FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
                   Dim_ProductCategory AS pc ON tmp.UPC = pc.UPC INNER JOIN
                  [dbo].[Dim_Promotion] ON  tmp.PromotionType  = Dim_Promotion.[PromotionID] INNER JOIN
@@ -457,16 +458,42 @@ FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161,42"
-          Id="Package\Drop Temp Table"
-          TopLeft="764.428571878648,315.235298300284" />
+          Size="168.8,41.6"
+          Id="Package\Create Temp Table"
+          TopLeft="214.857134135403,89.0588235723106" />
         <NodeLayout
-          Size="218,42"
+          Size="160.8,41.6"
+          Id="Package\Drop Temp Table"
+          TopLeft="223.714276956053,318.294121872595" />
+        <NodeLayout
+          Size="217.6,41.6"
           Id="Package\Move Temp to Data Mart SQL"
-          TopLeft="734,207.705885055569" />
+          TopLeft="193.285705077405,210.76470862788" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="300.671419606404,130.658823572311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80.105885055569"
+              Start="0,0"
+              End="0,72.605885055569">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.605885055569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="843.964285939324,249.705885055569">
+          TopLeft="303.249991016729,252.76470862788">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -486,32 +513,6 @@ FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Create Temp Table"
-          TopLeft="755.571429057998,86" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="841.535714528999,128">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79.705885055569"
-              Start="0,0"
-              End="0,72.205885055569">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,72.205885055569" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -519,15 +520,15 @@ FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
     design-time-name="Package\Move Temp to Data Mart SQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Move Temp to Data Mart SQL\Store Price Data Mart"
-          TopLeft="146.730165605642,236.588240463428" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="134,42"
           Id="Package\Move Temp to Data Mart SQL\Temp Table"
           TopLeft="168.285709930926,116.294117679233" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Move Temp to Data Mart SQL\Store Price Data Mart"
+          TopLeft="146.730165605642,236.588240463428" />
         <EdgeLayout
           Id="Package\Move Temp to Data Mart SQL.Paths[OLE DB Source Output]"
           TopLeft="235.907937768284,157.894117679233">
@@ -547,7 +548,9 @@ FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
