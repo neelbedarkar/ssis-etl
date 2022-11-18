@@ -7,12 +7,12 @@
   DTS:CreatorName="LAPTOP-ULSN1LR1\Neel Bedarkar"
   DTS:DTSID="{6099AAC1-BF9A-4677-BB1F-516659566945}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.694.0"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{F2262666-0E60-4F8E-8B15-7BBCAB35EE6A}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{2297652C-0BA8-4677-81D1-3048557F1CFC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -355,7 +355,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\yuwan425\Desktop\Weeks.csv">
+          DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\Weeks.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -364,7 +364,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Weekno"
-              DTS:DTSID="{00103C7E-6C64-4922-9545-81A3E6931FD4}"
+              DTS:DTSID="{84837A0A-5236-4961-B980-130EA8F33EEE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -373,7 +373,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="StartDate"
-              DTS:DTSID="{4DE27165-2BC5-4180-977D-E14B9F45C2C0}"
+              DTS:DTSID="{1A6380A1-A120-4170-8D44-5056CCF29C34}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -382,7 +382,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EndDate"
-              DTS:DTSID="{62EE28A4-6649-4A81-B28E-3C1C15F95B07}"
+              DTS:DTSID="{D7341EA2-C815-4FF0-BD4D-3CCA30810C1C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -391,7 +391,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="SpecialEvents"
-              DTS:DTSID="{07C90DCB-913F-4C86-8164-DAB01E51AA2A}"
+              DTS:DTSID="{BEC89E25-DEA6-428B-AA8E-A00EC8C49026}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -410,8 +410,8 @@
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\Sunita Mandrupkar\Documents\Notes\ISTM 637 Data warehousing\Project\py scripts\Sampled\StorePriceTier.csv">
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\StorePriceTier.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -420,7 +420,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Store"
-              DTS:DTSID="{4D6875AE-C79E-4B37-972D-E3E0937B1EA0}"
+              DTS:DTSID="{B580F5FB-5FDC-4D42-AD03-E8F79FC06DF6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -429,7 +429,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 1"
-              DTS:DTSID="{734340C3-9C2B-4B3C-B1CA-A032F2B7FF3D}"
+              DTS:DTSID="{553F4E3B-85B1-470C-9CB6-63AF4415F994}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -438,7 +438,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PriceTier"
-              DTS:DTSID="{566A0940-774F-4C01-87A5-70AD88856C30}"
+              DTS:DTSID="{826789B7-EA34-49A5-BE56-54DB2B8A04CA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -447,7 +447,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 3"
-              DTS:DTSID="{0DD50F3D-ECE1-466B-B1AD-F5F6A11D5862}"
+              DTS:DTSID="{2D0F6FD6-A190-493F-926E-676A0B3DD34D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -456,7 +456,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 4"
-              DTS:DTSID="{32B34DBB-047D-4CB2-8034-21D7D8DDFDF5}"
+              DTS:DTSID="{24183A88-8407-476E-85D2-01EEAA083CD4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -465,7 +465,137 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 5"
-              DTS:DTSID="{537DBE2C-504C-444B-83A3-FE9B21D2FEB8}"
+              DTS:DTSID="{6FC1D286-8D88-40BC-938F-C35A8A3153E8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{668A33AE-66D2-45AA-A23C-1C95E99AF61D}"
+      DTS:ObjectName="Flat File Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\Weeks.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weekno"
+              DTS:DTSID="{B36B6066-6B7E-43B3-BAB1-09F2B739412F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StartDate"
+              DTS:DTSID="{704C8798-A0F3-46CC-AF07-C9810D3F3531}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndDate"
+              DTS:DTSID="{6BECE345-C023-4085-AEDE-EB7F20181149}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SpecialEvents"
+              DTS:DTSID="{85D9709E-446B-46BE-8F06-12864FC07B90}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A761D273-34E1-4A4D-BDD9-EA5485C9CBDE}"
+      DTS:ObjectName="Flat File Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\nebedarkar\Documents\DFF data - zipped\StorePriceTier.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Store"
+              DTS:DTSID="{5969E19F-A764-4FF1-93A0-C77F3DC1C8B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 1"
+              DTS:DTSID="{E9F36436-E018-4FB8-B2C3-E7994F69C3B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PriceTier"
+              DTS:DTSID="{DAE333DE-33AA-4B53-8DA2-D273DF746F10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{49323D7A-AD84-4BA7-A752-7B1B90873DAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 4"
+              DTS:DTSID="{72BEC0C2-4148-4B4B-B5CA-8BF4902B6F9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{1D60DEC7-E8E5-4543-AF9E-02D3FDB376CD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -647,7 +777,6 @@
       DTS:refId="Package\Loop for Movement"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:Disabled="True"
       DTS:DTSID="{411357ec-39b1-4c57-ac39-d6c80b7b9ac0}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -1316,13 +1445,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                          name="Expression">(DT_I4)#{Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]} == 1</property>
+                          name="Expression">#{Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]} == "1"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the friendly version of the expression. This expression version uses column names."
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_I4)OK == 1</property>
+                          name="FriendlyExpression">OK == "1"</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1393,7 +1522,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1489,14 +1618,6 @@
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PROFIT]" />
                         <inputColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[OK]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="OK"
-                          externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[OK]"
-                          lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[OK]" />
-                        <inputColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[QTY]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -1519,34 +1640,36 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="15"
                           name="UPC" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="50"
                           name="Store" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="5"
                           name="Weekno" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtySld]"
-                          dataType="i8"
+                          dataType="i4"
                           name="QtySld" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
                           dataType="numeric"
                           name="Price"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
                           dataType="numeric"
                           name="Profit"
-                          precision="18" />
+                          precision="18"
+                          scale="2" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
                           codePage="1252"
@@ -1554,13 +1677,15 @@
                           length="10"
                           name="PromotionType" />
                         <externalMetadataColumn
-                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[OK]"
-                          dataType="i4"
-                          name="OK" />
-                        <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtyBundle]"
                           dataType="i4"
                           name="QtyBundle" />
+                        <externalMetadataColumn
+                          refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PromotionName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1629,7 +1754,6 @@
       DTS:refId="Package\Loop for UPC"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:Disabled="True"
       DTS:DTSID="{9E3EE22A-8C99-4100-80FA-409AA98B615F}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -1777,7 +1901,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1871,31 +1995,31 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="5"
                           name="CategoryCode" />
                         <externalMetadataColumn
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="15"
                           name="UPC" />
                         <externalMetadataColumn
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="5"
                           name="CommodityCode" />
                         <externalMetadataColumn
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="30"
                           name="ProductName" />
                         <externalMetadataColumn
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="20"
                           name="ItemNumber" />
                       </externalMetadataColumns>
                     </input>
@@ -2534,8 +2658,8 @@
               <connections>
                 <connection
                   refId="Package\Stores Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 4]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -2550,7 +2674,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store]"
-                      length="10"
+                      length="50"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Store]"
                       name="Store"
                       truncationRowDisposition="FailComponent">
@@ -2594,7 +2718,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PriceTier]"
-                      length="10"
+                      length="50"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PriceTier]"
                       name="PriceTier"
                       truncationRowDisposition="FailComponent">
@@ -2682,7 +2806,7 @@
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="50"
                       name="Store" />
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 1]"
@@ -2694,7 +2818,7 @@
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PriceTier]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="50"
                       name="PriceTier" />
                     <externalMetadataColumn
                       refId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
@@ -2770,7 +2894,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2821,7 +2945,7 @@
                       refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Store]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="50"
                       cachedName="Store"
                       externalMetadataColumnId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Store]" />
@@ -2829,7 +2953,7 @@
                       refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PriceTier]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="50"
                       cachedName="PriceTier"
                       externalMetadataColumnId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PriceTier]" />
@@ -2923,8 +3047,8 @@
               <connections>
                 <connection
                   refId="Package\Weeks Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 3]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -3103,7 +3227,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3187,7 +3311,8 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="Weekno" />
                     <externalMetadataColumn
@@ -3200,7 +3325,8 @@
                       name="EndDate" />
                     <externalMetadataColumn
                       refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEvents]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="SpecialEvents" />
                   </externalMetadataColumns>
@@ -3282,38 +3408,38 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="204,41.6"
+          Size="204,42"
           Id="Package\Loop for Movement\Movement Data Flow Task"
           TopLeft="86.114288536383,23.0882355407859" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="329.6,192.8"
-          Size="329.6,236"
+          PanelSize="330,193"
+          Size="330,236"
           Id="Package\Loop for Movement"
           TopLeft="141.714288110636,474.08235431394" />
         <NodeLayout
-          Size="174.4,41.6"
+          Size="174,42"
           Id="Package\Loop for UPC\UPC Data Flow Task"
           TopLeft="84.114288536383,22.0882355407859" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="329.6,192.8"
-          Size="329.6,236"
+          PanelSize="330,193"
+          Size="330,236"
           Id="Package\Loop for UPC"
-          TopLeft="140.714288110636,148.08235431394" />
+          TopLeft="138.714288110636,148.08235431394" />
         <NodeLayout
-          Size="184,41.6"
+          Size="184,42"
           Id="Package\Stores Data Flow Task"
           TopLeft="210.714285130404,889.470587666885" />
         <NodeLayout
-          Size="185.6,41.6"
+          Size="186,42"
           Id="Package\Weeks Data Flow Task"
           TopLeft="217.285714103251,782.470588213845" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="306.214288110636,384.08235431394">
+          TopLeft="305.214288110636,384.08235431394">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3386,17 +3512,13 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149,42"
-          Id="Package\Loop for Movement\Movement Data Flow Task\File Read Error"
-          TopLeft="652,118" />
+          Size="181,42"
+          Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1"
+          TopLeft="621,399" />
         <NodeLayout
           Size="137,42"
           Id="Package\Loop for Movement\Movement Data Flow Task\ProductData"
           TopLeft="151,380.941176063049" />
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1"
-          TopLeft="621,399" />
         <NodeLayout
           Size="150,42"
           Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Source"
@@ -3405,6 +3527,10 @@
           Size="147,42"
           Id="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check"
           TopLeft="151,223" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Loop for Movement\Movement Data Flow Task\File Read Error"
+          TopLeft="652,118" />
         <EdgeLayout
           Id="Package\Loop for Movement\Movement Data Flow Task.Paths[OLE DB Destination Error Output]"
           TopLeft="288,401.941176063049">
@@ -3752,11 +3878,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Stores Data Flow Task\Flat File Source"
           TopLeft="186,108" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Stores Data Flow Task\OLE DB Destination"
           TopLeft="181.85714120281,214.99999981768" />
         <EdgeLayout
@@ -3803,13 +3929,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Weeks Data Flow Task\Flat File Source"
-          TopLeft="170,107" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Weeks Data Flow Task\OLE DB Destination"
           TopLeft="184,297" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Weeks Data Flow Task\Flat File Source"
+          TopLeft="170,107" />
         <EdgeLayout
           Id="Package\Weeks Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="245.5,149">

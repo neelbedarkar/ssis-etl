@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact Table Manufacturer Sale"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{60884B59-6DC0-47E0-A69B-09297BD7BE19}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{7A0EEAC8-41B2-4520-A43D-00A27DCCCF42}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -165,7 +165,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Fact_StorePriceTierSales]</property>
+                  name="OpenRowset">[dbo].[Fact_ManufacturerSales]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -222,22 +222,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[QuantitySold]"
-                      cachedDataType="numeric"
-                      cachedName="QuantitySold"
-                      cachedPrecision="18"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[QuantitySold]"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]" />
-                    <inputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[ProfitMargin]"
-                      cachedDataType="numeric"
-                      cachedName="ProfitMargin"
-                      cachedPrecision="18"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[ProfitMargin]"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]" />
-                    <inputColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[TimeKey]"
                       cachedDataType="i4"
                       cachedName="TimeKey"
@@ -250,44 +234,46 @@
                       externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
                       lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[PCKey]" />
                     <inputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[StorePriceTierKey]"
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[cnt_manuf]"
                       cachedDataType="i4"
-                      cachedName="StorePriceTierKey"
-                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[StorePTKey]"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]" />
+                      cachedName="cnt_manuf"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[NumberofManufacturers]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[cnt_manuf]" />
+                    <inputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[qty_prod_sold]"
+                      cachedDataType="i4"
+                      cachedName="qty_prod_sold"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[UnitsSold]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[qty_prod_sold]" />
+                    <inputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].Columns[sum_delt_manuf]"
+                      cachedDataType="i4"
+                      cachedName="sum_delt_manuf"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[NumberofNewManufacturers]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[sum_delt_manuf]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="PCKey" />
                     <externalMetadataColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[StorePTKey]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="StorePTKey" />
-                    <externalMetadataColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="TimeKey" />
                     <externalMetadataColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[QuantitySold]"
-                      dataType="numeric"
-                      name="QuantitySold"
-                      precision="18"
-                      scale="2" />
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[NumberofManufacturers]"
+                      dataType="i4"
+                      name="NumberofManufacturers" />
                     <externalMetadataColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[ProfitMargin]"
-                      dataType="numeric"
-                      name="ProfitMargin"
-                      precision="18"
-                      scale="2" />
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[UnitsSold]"
+                      dataType="i4"
+                      name="UnitsSold" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart.Inputs[OLE DB Destination Input].ExternalColumns[NumberofNewManufacturers]"
+                      dataType="i4"
+                      name="NumberofNewManufacturers" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -353,7 +339,7 @@ from
 
 INNER JOIN
 		[602-Group6-dw-area].[dbo].[Dim_ProductCategory] dimcat
-		ON fact.manuf_upc = dimcat.UPC AND fact.categorycode = dimcat.CategoryCode AND fact.manuf_code = replace(dimcat.ManufacturerID ,substring(dimcat.ManufacturerID , LEN(dimcat.ManufacturerID )-5,5),'')
+		ON fact.manuf_upc = dimcat.UPC AND fact.categorycode = dimcat.CategoryCode
 		
 INNER JOIN		
 		[602-Group6-dw-area].[dbo].[Dim_Time] dimweek
@@ -394,28 +380,6 @@ INNER JOIN
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[QuantitySold]"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[QuantitySold]"
-                      name="QuantitySold"
-                      precision="18"
-                      scale="2"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[ProfitMargin]"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[ProfitMargin]"
-                      name="ProfitMargin"
-                      precision="18"
-                      scale="2"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[PCKey]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -423,15 +387,6 @@ INNER JOIN
                       externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[PCKey]"
                       lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[PCKey]"
                       name="PCKey"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTierKey]"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[StorePriceTierKey]"
-                      name="StorePriceTierKey"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[TimeKey]"
@@ -442,33 +397,56 @@ INNER JOIN
                       lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[TimeKey]"
                       name="TimeKey"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[cnt_manuf]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[cnt_manuf]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[cnt_manuf]"
+                      name="cnt_manuf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[qty_prod_sold]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[qty_prod_sold]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[qty_prod_sold]"
+                      name="qty_prod_sold"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[sum_delt_manuf]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[sum_delt_manuf]"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].Columns[sum_delt_manuf]"
+                      name="sum_delt_manuf"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[QuantitySold]"
-                      dataType="numeric"
-                      name="QuantitySold"
-                      precision="18"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[ProfitMargin]"
-                      dataType="numeric"
-                      name="ProfitMargin"
-                      precision="18"
-                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[PCKey]"
                       dataType="i4"
                       name="PCKey" />
                     <externalMetadataColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[StorePriceTierKey]"
-                      dataType="i4"
-                      name="StorePriceTierKey" />
-                    <externalMetadataColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[TimeKey]"
                       dataType="i4"
                       name="TimeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[cnt_manuf]"
+                      dataType="i4"
+                      name="cnt_manuf" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[qty_prod_sold]"
+                      dataType="i4"
+                      name="qty_prod_sold" />
+                    <externalMetadataColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Output].ExternalColumns[sum_delt_manuf]"
+                      dataType="i4"
+                      name="sum_delt_manuf" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -482,29 +460,25 @@ INNER JOIN
                       lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[PCKey]"
                       name="PCKey" />
                     <outputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[StorePriceTierKey]"
-                      dataType="i4"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[StorePriceTierKey]"
-                      name="StorePriceTierKey" />
-                    <outputColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
                       dataType="i4"
                       lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[TimeKey]"
                       name="TimeKey" />
                     <outputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[QuantitySold]"
-                      dataType="numeric"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[QuantitySold]"
-                      name="QuantitySold"
-                      precision="18"
-                      scale="2" />
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[cnt_manuf]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[cnt_manuf]"
+                      name="cnt_manuf" />
                     <outputColumn
-                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ProfitMargin]"
-                      dataType="numeric"
-                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ProfitMargin]"
-                      name="ProfitMargin"
-                      precision="18"
-                      scale="2" />
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[qty_prod_sold]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[qty_prod_sold]"
+                      name="qty_prod_sold" />
+                    <outputColumn
+                      refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[sum_delt_manuf]"
+                      dataType="i4"
+                      lineageId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[sum_delt_manuf]"
+                      name="sum_delt_manuf" />
                     <outputColumn
                       refId="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -593,6 +567,10 @@ INNER JOIN
           Id="Package\Drop Existing Temp Table"
           TopLeft="146.428571878648,63.235298300284" />
         <NodeLayout
+          Size="247,42"
+          Id="Package\Drop Temp Fact_ManufacturerSales"
+          TopLeft="131,437" />
+        <NodeLayout
           Size="298,42"
           Id="Package\Move Temp Fact ManufSales to Data Mart SQL"
           TopLeft="105,335" />
@@ -662,10 +640,6 @@ INNER JOIN
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="247,42"
-          Id="Package\Drop Temp Fact_ManufacturerSales"
-          TopLeft="131,437" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="254.25,377">
@@ -695,7 +669,7 @@ INNER JOIN
     design-time-name="Package\Move Temp Fact ManufSales to Data Mart SQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="179,42"
           Id="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart"
@@ -723,7 +697,9 @@ INNER JOIN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,25.8970613920975,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
