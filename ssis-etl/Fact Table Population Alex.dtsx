@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{6EAE1234-7AF3-45FD-9E79-285A390CB996}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{67989EAB-4111-443C-B91F-EE6568B2782E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -72,10 +72,26 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Drop Temp Prod Cat Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2433c0ba-a10e-40a3-96ee-0ff26d902403}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Temp Prod Cat Table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A90A5E12-012B-4984-A636-D2C7AB080493}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TEMP_prd_cat]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[TEMP_prd_cat]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Drop Temp Table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{731C7318-FE04-4450-B51A-39E48261792E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -429,6 +445,14 @@ FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FF3E38CE-6410-4A22-9793-8227E230E209}"
+      DTS:From="Package\Drop Temp Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Drop Temp Prod Cat Table" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{9EAFB55C-48C6-41E7-8F7E-560480C041EB}"
@@ -460,29 +484,29 @@ FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Create Temp Table"
-          TopLeft="214.857134135403,89.0588235723106" />
+          TopLeft="226.285705758602,52.3529407045833" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Drop Temp Table"
-          TopLeft="223.714276956053,318.294121872595" />
+          TopLeft="237.285705758602,259.411768105616" />
         <NodeLayout
           Size="217.6,41.6"
           Id="Package\Move Temp to Data Mart SQL"
-          TopLeft="193.285705077405,210.76470862788" />
+          TopLeft="206.142848153504,154.941178433211" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="300.671419606404,130.658823572311">
+          TopLeft="312.814276956053,93.9529407045833">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80.105885055569"
+              EndConnector="0,60.9882377286281"
               Start="0,0"
-              End="0,72.605885055569">
+              End="0,53.4882377286281">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.605885055569" />
+                    End="0,53.4882377286281" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -493,18 +517,44 @@ FROM     [602-Group6-staging-area].dbo.SpecialTemp AS tmp INNER JOIN
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="303.249991016729,252.76470862788">
+          TopLeft="316.314276956053,196.541178433211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.529413244715"
+              EndConnector="0,62.8705896724043"
               Start="0,0"
-              End="0,58.029413244715">
+              End="0,55.3705896724043">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.029413244715" />
+                    End="0,55.3705896724043" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Drop Temp Prod Cat Table"
+          TopLeft="236.857134390851,360.247062212538" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="317.471420074726,301.011768105616">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.2352941069224"
+              Start="0,0"
+              End="0,51.7352941069224">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.7352941069224" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

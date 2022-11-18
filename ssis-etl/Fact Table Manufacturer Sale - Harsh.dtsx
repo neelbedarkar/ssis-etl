@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Fact Table Manufacturer Sale"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{1C1285A0-97B7-4E6A-8C20-F7A07596711B}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{C23A9C18-FE31-435D-82C8-2CC980341728}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -121,7 +121,6 @@
       DTS:refId="Package\Drop Temp Fact_ManufacturerSales"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{372206a2-3e18-4d39-a50c-238577901c34}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -570,7 +569,7 @@ INNER JOIN
         <NodeLayout
           Size="247.2,41.6"
           Id="Package\Drop Temp Fact_ManufacturerSales"
-          TopLeft="131,437" />
+          TopLeft="131,436.235294106922" />
         <NodeLayout
           Size="297.6,41.6"
           Id="Package\Move Temp Fact ManufSales to Data Mart SQL"
@@ -643,18 +642,18 @@ INNER JOIN
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="254.25,377">
+          TopLeft="254.2,376.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.6352941069223"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.1352941069223">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.1352941069223" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -670,13 +669,13 @@ INNER JOIN
     design-time-name="Package\Move Temp Fact ManufSales to Data Mart SQL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="179,42"
+          Size="179.2,41.6"
           Id="Package\Move Temp Fact ManufSales to Data Mart SQL\Store Price Data Mart"
           TopLeft="146.730165605642,236.588240463428" />
         <NodeLayout
-          Size="135,42"
+          Size="135.2,41.6"
           Id="Package\Move Temp Fact ManufSales to Data Mart SQL\Temp Table"
           TopLeft="167.285709930926,119.294117679233" />
         <EdgeLayout
@@ -698,9 +697,7 @@ INNER JOIN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,25.8970613920975,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{C4BEE71C-298C-4AA0-85B8-CBAB055F7AEB}">
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{4ADC0BE8-B531-4495-B4C3-83024FD374B8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -952,7 +952,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[UPC]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="15"
                           cachedName="UPC"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[UPC]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[UPC]" />
@@ -1000,7 +1000,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[SALE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="10"
+                          cachedLength="5"
                           cachedName="SALE"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[SALE]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SALE]" />
@@ -1127,7 +1127,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UPC]"
-                          length="50"
+                          length="15"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[UPC]"
                           name="UPC"
                           truncationRowDisposition="RedirectRow">
@@ -1259,7 +1259,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SALE]"
-                          length="10"
+                          length="5"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SALE]"
                           name="SALE"
                           truncationRowDisposition="RedirectRow">
@@ -1573,7 +1573,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[UPC]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="15"
                           cachedName="UPC"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[UPC]" />
@@ -1629,7 +1629,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].Columns[SALE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="10"
+                          cachedLength="5"
                           cachedName="SALE"
                           externalMetadataColumnId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
                           lineageId="Package\Loop for Movement\Movement Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SALE]" />
@@ -1646,13 +1646,11 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="10"
                           name="Store" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
-                          codePage="1252"
-                          dataType="str"
-                          length="5"
+                          dataType="i4"
                           name="Weekno" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtySld]"
@@ -1674,7 +1672,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[PromotionType]"
                           codePage="1252"
                           dataType="str"
-                          length="10"
+                          length="5"
                           name="PromotionType" />
                         <externalMetadataColumn
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[QtyBundle]"
@@ -1684,7 +1682,7 @@
                           refId="Package\Loop for Movement\Movement Data Flow Task\ProductData.Inputs[OLE DB Destination Input].ExternalColumns[PromotionName]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="15"
                           name="PromotionName" />
                       </externalMetadataColumns>
                     </input>
@@ -1952,7 +1950,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].Columns[UPC]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="15"
                           cachedName="UPC"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[UPC]" />
@@ -1960,7 +1958,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].Columns[COM_CODE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="5"
                           cachedName="COM_CODE"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[COM_CODE]" />
@@ -1968,7 +1966,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].Columns[DESCRIP]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="30"
                           cachedName="DESCRIP"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[DESCRIP]" />
@@ -1976,7 +1974,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].Columns[NITEM]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="20"
                           cachedName="NITEM"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[NITEM]" />
@@ -1984,7 +1982,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].Columns[FileName]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="5"
                           cachedName="FileName"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\Category Table Load.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Output].Columns[FileName]" />
@@ -2064,6 +2062,7 @@
                         <inputColumn
                           refId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Inputs[Data Conversion Input].Columns[FileName]"
                           cachedDataType="wstr"
+                          cachedLength="10"
                           cachedName="FileName"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\Add Filename.Outputs[Derived Column Output].Columns[FileName]" />
                       </inputColumns>
@@ -2083,7 +2082,7 @@
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          length="50"
+                          length="5"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type.Outputs[Data Conversion Output].Columns[FileName]"
                           name="FileName"
                           truncationRowDisposition="FailComponent">
@@ -2241,7 +2240,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].Columns[COM_CODE]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="5"
                           cachedName="COM_CODE"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].ExternalColumns[COM_CODE]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[COM_CODE]" />
@@ -2249,7 +2248,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].Columns[UPC]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="15"
                           cachedName="UPC"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].ExternalColumns[UPC]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[UPC]" />
@@ -2257,7 +2256,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].Columns[DESCRIP]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="30"
                           cachedName="DESCRIP"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].ExternalColumns[DESCRIP]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[DESCRIP]" />
@@ -2281,7 +2280,7 @@
                           refId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].Columns[NITEM]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="20"
                           cachedName="NITEM"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination.Inputs[Flat File Destination Input].ExternalColumns[NITEM]"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[NITEM]" />
@@ -2386,7 +2385,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].ExternalColumns[COM_CODE]"
-                          length="50"
+                          length="5"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[COM_CODE]"
                           name="COM_CODE"
                           truncationRowDisposition="RedirectRow">
@@ -2408,7 +2407,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].ExternalColumns[UPC]"
-                          length="50"
+                          length="15"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[UPC]"
                           name="UPC"
                           truncationRowDisposition="RedirectRow">
@@ -2430,7 +2429,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].ExternalColumns[DESCRIP]"
-                          length="50"
+                          length="30"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[DESCRIP]"
                           name="DESCRIP"
                           truncationRowDisposition="RedirectRow">
@@ -2496,7 +2495,7 @@
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="RedirectRow"
                           externalMetadataColumnId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].ExternalColumns[NITEM]"
-                          length="50"
+                          length="20"
                           lineageId="Package\Loop for UPC\UPC Data Flow Task\UPC File Read.Outputs[Flat File Source Output].Columns[NITEM]"
                           name="NITEM"
                           truncationRowDisposition="RedirectRow">
@@ -2674,7 +2673,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store]"
-                      length="50"
+                      length="10"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Store]"
                       name="Store"
                       truncationRowDisposition="FailComponent">
@@ -2718,7 +2717,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PriceTier]"
-                      length="50"
+                      length="15"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PriceTier]"
                       name="PriceTier"
                       truncationRowDisposition="FailComponent">
@@ -2870,11 +2869,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Stores Data Flow Task\OLE DB Destination"
+              refId="Package\Stores Data Flow Task\Store Staging Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="Store Staging Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -2927,7 +2926,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Stores Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Stores Data Flow Task\Store Staging Table.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602_Group6_Staging_Area]"
                   connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602_Group6_Staging_Area]"
                   description="The OLE DB runtime connection used to access the database."
@@ -2935,64 +2934,64 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Store]"
+                      refId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input].Columns[Store]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="10"
                       cachedName="Store"
-                      externalMetadataColumnId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
+                      externalMetadataColumnId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Store]" />
                     <inputColumn
-                      refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PriceTier]"
+                      refId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input].Columns[PriceTier]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="15"
                       cachedName="PriceTier"
-                      externalMetadataColumnId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
+                      externalMetadataColumnId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
                       lineageId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PriceTier]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
+                      refId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Store]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="Store" />
                     <externalMetadataColumn
-                      refId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
+                      refId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="15"
                       name="PriceTier" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Stores Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Stores Data Flow Task\Store Staging Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Stores Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Stores Data Flow Task\Store Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Stores Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Stores Data Flow Task\Store Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Stores Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Stores Data Flow Task\Store Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Stores Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Stores Data Flow Task\Store Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3004,7 +3003,7 @@
           <paths>
             <path
               refId="Package\Stores Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Stores Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Stores Data Flow Task\Store Staging Table.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Stores Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -3203,11 +3202,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Weeks Data Flow Task\OLE DB Destination"
+              refId="Package\Weeks Data Flow Task\Weeks Staging Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination"
+              name="Weeks Staging Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -3260,7 +3259,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Weeks Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Weeks Data Flow Task\Weeks Staging Table.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602_Group6_Staging_Area]"
                   connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602_Group6_Staging_Area]"
                   description="The OLE DB runtime connection used to access the database."
@@ -3268,63 +3267,61 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weekno]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].Columns[Weekno]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Weekno"
-                      externalMetadataColumnId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
+                      externalMetadataColumnId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
                       lineageId="Package\Weeks Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Weekno]" />
                     <inputColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StartDate]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].Columns[StartDate]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="StartDate"
-                      externalMetadataColumnId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      externalMetadataColumnId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
                       lineageId="Package\Weeks Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[StartDate]" />
                     <inputColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EndDate]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].Columns[EndDate]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="EndDate"
-                      externalMetadataColumnId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      externalMetadataColumnId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
                       lineageId="Package\Weeks Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EndDate]" />
                     <inputColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SpecialEvents]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].Columns[SpecialEvents]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="SpecialEvents"
-                      externalMetadataColumnId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEvents]"
+                      externalMetadataColumnId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEvents]"
                       lineageId="Package\Weeks Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SpecialEvents]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[Weekno]"
+                      dataType="i4"
                       name="Weekno" />
                     <externalMetadataColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
                       dataType="dbDate"
                       name="StartDate" />
                     <externalMetadataColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
                       dataType="dbDate"
                       name="EndDate" />
                     <externalMetadataColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEvents]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input].ExternalColumns[SpecialEvents]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -3334,22 +3331,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Weeks Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Weeks Data Flow Task\Weeks Staging Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Weeks Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Weeks Data Flow Task\Weeks Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Weeks Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Weeks Data Flow Task\Weeks Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Weeks Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Weeks Data Flow Task\Weeks Staging Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3361,7 +3358,7 @@
           <paths>
             <path
               refId="Package\Weeks Data Flow Task.Paths[Flat File Source Output]"
-              endId="Package\Weeks Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Weeks Data Flow Task\Weeks Staging Table.Inputs[OLE DB Destination Input]"
               name="Flat File Source Output"
               startId="Package\Weeks Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -3410,47 +3407,47 @@
         <NodeLayout
           Size="204,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task"
-          TopLeft="86.114288536383,23.0882355407859" />
+          TopLeft="45.2979613106728,14.3487396198985" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="329.6,192.8"
-          Size="329.6,236"
+          PanelSize="260,72.8"
+          Size="260,116"
           Id="Package\Loop for Movement"
-          TopLeft="141.000002384186,474.08235431394" />
+          TopLeft="171.952383863683,294.830810810704" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task"
-          TopLeft="84.114288536383,22.0882355407859" />
+          TopLeft="45.3387776719584,23.1806725308968" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="329.6,192.8"
-          Size="329.6,236"
+          PanelSize="253.6,93.6"
+          Size="253.6,136.8"
           Id="Package\Loop for UPC"
-          TopLeft="138.714288110636,148.08235431394" />
+          TopLeft="178.850343215918,105.113166036243" />
         <NodeLayout
           Size="184,41.6"
           Id="Package\Stores Data Flow Task"
-          TopLeft="210.714285130404,889.470587666885" />
+          TopLeft="205.952380287405,551.543412059237" />
         <NodeLayout
           Size="185.6,41.6"
           Id="Package\Weeks Data Flow Task"
-          TopLeft="217.285714103251,782.470588213845" />
+          TopLeft="212.523809260252,444.543412606197" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="304.657145247411,384.08235431394">
+          TopLeft="303.8013635398,241.913166036243">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,90"
+              EndConnector="0,52.9176447744602"
               Start="0,0"
-              End="0,82.5">
+              End="0,45.4176447744602">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,82.5" />
+                    End="0,45.4176447744602" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3461,18 +3458,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="307.942858243719,710.08235431394">
+          TopLeft="303.638096561967,410.830810810704">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72.388233899905"
+              EndConnector="0,33.7126017954934"
               Start="0,0"
-              End="0,64.888233899905">
+              End="0,26.2126017954934">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.888233899905" />
+                    End="0,26.2126017954934" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3483,7 +3480,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="306.399999616827,824.070588213845">
+          TopLeft="301.638094773828,486.143412606197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3514,11 +3511,11 @@
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Destination 1"
-          TopLeft="621,399" />
+          TopLeft="663,341" />
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\ProductData"
-          TopLeft="151,380.941176063049" />
+          TopLeft="364,335.941176063049" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\Flat File Source"
@@ -3526,73 +3523,73 @@
         <NodeLayout
           Size="147.2,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\OK Flag Check"
-          TopLeft="151,223" />
+          TopLeft="361,221" />
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\Loop for Movement\Movement Data Flow Task\File Read Error"
           TopLeft="652,118" />
         <EdgeLayout
           Id="Package\Loop for Movement\Movement Data Flow Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="288,401.941176063049">
+          TopLeft="500.8,359.270588031525">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="333,18.058823936951"
+              EndConnector="162.2,0"
               Start="0,0"
-              End="325.5,18.058823936951">
+              End="154.7,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="162.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="162.5,0"
-                    Point2="166.5,0"
-                    Point3="166.5,4" />
-                  <mssgle:LineSegment
-                    End="166.5,14.058823936951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="166.5,14.058823936951"
-                    Point2="166.5,18.058823936951"
-                    Point3="170.5,18.058823936951" />
-                  <mssgle:LineSegment
-                    End="325.5,18.058823936951" />
+                    End="154.7,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="93.29109375,-17.43359375,146.4178125,11.43359375"
+              BoundingBox="4.14109374999983,5,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Ok_1]"
+          TopLeft="433.5,262.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73.341176063049"
+              Start="0,0"
+              End="0,65.841176063049">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.841176063049" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.9230859375,27.3893380315245,23.846171875,11.0625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="436,156">
+          TopLeft="435.4,155.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-211.5,67"
+              EndConnector="0,65.3999999999999"
               Start="0,0"
-              End="-211.5,59.5">
+              End="0,57.8999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="-4,33.5" />
-                  <mssgle:LineSegment
-                    End="-207.5,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-207.5,33.5"
-                    Point2="-211.5,33.5"
-                    Point3="-211.5,37.5" />
-                  <mssgle:LineSegment
-                    End="-211.5,59.5" />
+                    End="0,57.8999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3625,30 +3622,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Loop for Movement\Movement Data Flow Task.Paths[Ok_1]"
-          TopLeft="222,264.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,116.341176063049"
-              Start="0,0"
-              End="0,108.841176063049">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,108.841176063049" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.9230859375,48.8893380315245,23.846171875,11.0625"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -3671,43 +3644,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="205,42"
+          Size="204.8,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task\File Read Error Destination"
-          TopLeft="694,281" />
+          TopLeft="410.99682055006,67.3071865455226" />
         <NodeLayout
-          Size="176,42"
+          Size="176,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task\Category Table Load"
-          TopLeft="259,328.941176063049" />
+          TopLeft="95.1111083200998,281.189541406422" />
         <NodeLayout
-          Size="226,42"
+          Size="225.6,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task\UPC DB Write Error Destination"
-          TopLeft="653,381" />
+          TopLeft="440.396821571853,288.130717651792" />
         <NodeLayout
-          Size="145,42"
+          Size="144,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task\UPC File Read"
-          TopLeft="385,106" />
+          TopLeft="108.968249267461,64.3660124879945" />
         <NodeLayout
-          Size="231,42"
+          Size="231.2,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task\Convert the Filename Data Type"
-          TopLeft="221,224" />
+          TopLeft="67.1111084903991,203.777777494169" />
         <NodeLayout
-          Size="143,42"
+          Size="143.2,41.6"
           Id="Package\Loop for UPC\UPC Data Flow Task\Add Filename"
-          TopLeft="123,107" />
+          TopLeft="114.825396686184,135.718954651139" />
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="385,127.5">
+          TopLeft="183.696822976823,105.966012487995">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-119,0"
+              EndConnector="0,29.752942163144"
               Start="0,0"
-              End="-111.5,0">
+              End="0,22.252942163144">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-111.5,0" />
+                    End="0,22.252942163144" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3718,66 +3691,42 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Flat File Source Error Output]"
-          TopLeft="457.5,148">
+          TopLeft="252.968249267461,86.6365995167586">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="339,133"
+              EndConnector="158.028571282599,0"
               Start="0,0"
-              End="339,125.5">
+              End="150.528571282599,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,62.5"
-                    Point2="0,66.5"
-                    Point3="4,66.5" />
-                  <mssgle:LineSegment
-                    End="335,66.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="335,66.5"
-                    Point2="339,66.5"
-                    Point3="339,70.5" />
-                  <mssgle:LineSegment
-                    End="339,125.5" />
+                    End="150.528571282599,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="105.87361328125,71.5,127.2527734375,11.609375"
+              BoundingBox="11.6378989225493,5,127.2527734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="194.5,149">
+          TopLeft="184.568252588292,177.318954651139">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="142,75"
+              EndConnector="0,26.4588228430301"
               Start="0,0"
-              End="142,67.5">
+              End="0,18.9588228430301">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.5"
-                    Point2="0,37.5"
-                    Point3="4,37.5" />
-                  <mssgle:LineSegment
-                    End="138,37.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="138,37.5"
-                    Point2="142,37.5"
-                    Point3="142,41.5" />
-                  <mssgle:LineSegment
-                    End="142,67.5" />
+                    End="0,18.9588228430301" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3788,30 +3737,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="336.5,266">
+          TopLeft="182.911108405249,245.377777494169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.5,62.941176063049"
+              EndConnector="0,35.8117639122537"
               Start="0,0"
-              End="10.5,55.441176063049">
+              End="0,28.3117639122537">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.4705880315245" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.4705880315245"
-                    Point2="0,31.4705880315245"
-                    Point3="4,31.4705880315245" />
-                  <mssgle:LineSegment
-                    End="6.5,31.4705880315245" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.5,31.4705880315245"
-                    Point2="10.5,31.4705880315245"
-                    Point3="10.5,35.4705880315245" />
-                  <mssgle:LineSegment
-                    End="10.5,55.441176063049" />
+                    End="0,28.3117639122537" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3822,37 +3759,25 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop for UPC\UPC Data Flow Task.Paths[OLE DB Destination Error Output]"
-          TopLeft="435,349.941176063049">
+          TopLeft="271.111108320099,305.460129529107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="218,52.058823936951"
+              EndConnector="169.285713251756,0"
               Start="0,0"
-              End="210.5,52.058823936951">
+              End="161.785713251756,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="105,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="105,0"
-                    Point2="109,0"
-                    Point3="109,4" />
-                  <mssgle:LineSegment
-                    End="109,48.058823936951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="109,48.058823936951"
-                    Point2="109,52.058823936951"
-                    Point3="113,52.058823936951" />
-                  <mssgle:LineSegment
-                    End="210.5,52.058823936951" />
+                    End="161.785713251756,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="35.79109375,-17.43359375,146.4178125,11.43359375"
+              BoundingBox="7.68395037587798,5,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3878,27 +3803,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Stores Data Flow Task\Flat File Source"
           TopLeft="186,108" />
         <NodeLayout
-          Size="170,42"
-          Id="Package\Stores Data Flow Task\OLE DB Destination"
+          Size="171.2,41.6"
+          Id="Package\Stores Data Flow Task\Store Staging Table"
           TopLeft="181.85714120281,214.99999981768" />
         <EdgeLayout
           Id="Package\Stores Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="264.328570601405,149.6">
+          TopLeft="264.528570601405,149.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.3999998176799"
+              EndConnector="0,65.39999981768"
               Start="0,0"
-              End="0,57.8999998176799">
+              End="0,57.89999981768">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.8999998176799" />
+                    End="0,57.89999981768" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3911,7 +3836,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Stores Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Stores Data Flow Task\Store Staging Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3929,39 +3854,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Weeks Data Flow Task\OLE DB Destination"
-          TopLeft="184,297" />
+          Size="176.8,41.6"
+          Id="Package\Weeks Data Flow Task\Weeks Staging Table"
+          TopLeft="159,233" />
         <NodeLayout
-          Size="151,42"
+          Size="150.4,41.6"
           Id="Package\Weeks Data Flow Task\Flat File Source"
           TopLeft="170,107" />
         <EdgeLayout
           Id="Package\Weeks Data Flow Task.Paths[Flat File Source Output]"
-          TopLeft="245.5,149">
+          TopLeft="246.3,148.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24,148"
+              EndConnector="0,84.4000000000001"
               Start="0,0"
-              End="24,140.5">
+              End="0,76.9000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,70"
-                    Point2="0,74"
-                    Point3="4,74" />
-                  <mssgle:LineSegment
-                    End="20,74" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20,74"
-                    Point2="24,74"
-                    Point3="24,78" />
-                  <mssgle:LineSegment
-                    End="24,140.5" />
+                    End="0,76.9000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3974,7 +3887,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Weeks Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Weeks Data Flow Task\Weeks Staging Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

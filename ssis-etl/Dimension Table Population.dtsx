@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Dimension Population Alex"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{DC471487-D153-472D-A39A-67E9DF9B108F}">
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{B935818A-6946-4326-AFF9-09C71A58324A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -125,7 +125,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CategoryCode]"
-                      length="50"
+                      length="5"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]"
                       name="CategoryCode"
                       truncationRowDisposition="FailComponent" />
@@ -136,7 +136,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
-                      length="50"
+                      length="15"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]"
                       name="UPC"
                       truncationRowDisposition="FailComponent" />
@@ -147,7 +147,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CommodityCode]"
-                      length="50"
+                      length="5"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]"
                       name="CommodityCode"
                       truncationRowDisposition="FailComponent" />
@@ -158,7 +158,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
-                      length="50"
+                      length="30"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]"
                       name="ProductName"
                       truncationRowDisposition="FailComponent" />
@@ -169,7 +169,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ItemNumber]"
-                      length="50"
+                      length="20"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]"
                       name="ItemNumber"
                       truncationRowDisposition="FailComponent" />
@@ -180,31 +180,31 @@
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CategoryCode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="5"
                       name="CategoryCode" />
                     <externalMetadataColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[UPC]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="15"
                       name="UPC" />
                     <externalMetadataColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[CommodityCode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="5"
                       name="CommodityCode" />
                     <externalMetadataColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="ProductName" />
                     <externalMetadataColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].ExternalColumns[ItemNumber]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="ItemNumber" />
                   </externalMetadataColumns>
                 </output>
@@ -217,35 +217,35 @@
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CategoryCode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="5"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CategoryCode]"
                       name="CategoryCode" />
                     <outputColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[UPC]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="15"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[UPC]"
                       name="UPC" />
                     <outputColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CommodityCode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="5"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[CommodityCode]"
                       name="CommodityCode" />
                     <outputColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ProductName]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ProductName]"
                       name="ProductName" />
                     <outputColumn
                       refId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ItemNumber]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Error Output].Columns[ItemNumber]"
                       name="ItemNumber" />
                     <outputColumn
@@ -282,7 +282,7 @@
                       refId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input].Columns[UPC]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="15"
                       cachedName="UPC"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]" />
                   </inputColumns>
@@ -291,12 +291,12 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Dim Product Category Population\Conditional Split.Outputs[UPC Cleaned]"
+                  refId="Package\Dim Product Category Population\Conditional Split.Outputs[UPC More than 5 Characters]"
                   description="Output 1 of the Conditional Split Transformation"
                   errorOrTruncationOperation="Computation"
                   errorRowDisposition="FailComponent"
                   exclusionGroup="1"
-                  name="UPC Cleaned"
+                  name="UPC More than 5 Characters"
                   synchronousInputId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input]"
                   truncationRowDisposition="FailComponent">
                   <properties>
@@ -373,7 +373,7 @@
                       refId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input].Columns[CategoryCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="5"
                       cachedName="CategoryCode"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -398,14 +398,14 @@
                       refId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input].Columns[UPC]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="15"
                       cachedName="UPC"
                       lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]" />
                     <inputColumn
                       refId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input].Columns[ProductName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="ProductName"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -444,7 +444,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="50"
+                      length="15"
                       lineageId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]"
                       name="Manufacturer ID"
                       truncationRowDisposition="FailComponent">
@@ -453,13 +453,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,50,1252)[LEFT](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]},[LEN](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]}) - 5)</property>
+                          name="Expression">(DT_STR,15,1252)[LEFT](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]},[LEN](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]}) - 5)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_STR,50,1252)LEFT(UPC,LEN(UPC) - 5)</property>
+                          name="FriendlyExpression">(DT_STR,15,1252)LEFT(UPC,LEN(UPC) - 5)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -491,134 +491,66 @@
               </outputs>
             </component>
             <component
-              refId="Package\Dim Product Category Population\Sort UPC"
-              componentClassID="Microsoft.Sort"
-              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-              name="Sort UPC"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the maximum number of threads to use for sorting."
-                  expressionType="Notify"
-                  name="MaximumThreads">-1</property>
-              </properties>
+              refId="Package\Dim Product Category Population\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input]"
-                  name="Sort Input">
+                  refId="Package\Dim Product Category Population\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[CategoryCode]"
+                      refId="Package\Dim Product Category Population\Derived Column 1.Inputs[Derived Column Input].Columns[CategoryCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="5"
                       cachedName="CategoryCode"
-                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]">
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
                       <properties>
                         <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]})</property>
                         <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(CategoryCode)</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[UPC]"
+                      refId="Package\Dim Product Category Population\Derived Column 1.Inputs[Derived Column Input].Columns[ProductName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="UPC"
-                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[CommodityCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="CommodityCode"
-                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[ProductName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="ProductName"
-                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]">
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
                       <properties>
                         <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]},"\"","")</property>
                         <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[ItemNumber]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ItemNumber"
-                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[Manufacturer ID]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Manufacturer ID"
-                      lineageId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the comparison options for character data."
-                          name="NewComparisonFlags">0</property>
-                        <property
-                          dataType="System.Int32"
-                          description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(ProductName,"\"","")</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -627,112 +559,70 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output]"
-                  isSorted="true"
-                  name="Sort Output">
+                  refId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Dim Product Category Population\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CategoryCode]"
+                      refId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Output].Columns[Manufacturer ID]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CategoryCode]"
-                      name="CategoryCode">
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Output].Columns[Manufacturer ID]"
+                      name="Manufacturer ID"
+                      truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]}</property>
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,15,1252)""</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,15,1252)""</property>
                       </properties>
                     </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Dim Product Category Population\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
                     <outputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[UPC]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[UPC]"
-                      name="UPC"
-                      sortKeyPosition="1">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]}</property>
-                      </properties>
-                    </outputColumn>
+                      refId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
                     <outputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CommodityCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CommodityCode]"
-                      name="CommodityCode">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ProductName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ProductName]"
-                      name="ProductName">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ItemNumber]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ItemNumber]"
-                      name="ItemNumber">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[Manufacturer ID]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[Manufacturer ID]"
-                      name="Manufacturer ID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]}</property>
-                      </properties>
-                    </outputColumn>
+                      refId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Dim Product Category Population\TempTable"
+              refId="Package\Dim Product Category Population\Dim_PC Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="TempTable"
+              name="Dim_PC Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -743,7 +633,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Dim_ProductCategory]</property>
+                  name="OpenRowset">[dbo].[Dim_PC Table]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -785,7 +675,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Dim Product Category Population\TempTable.Connections[OleDbConnection]"
+                  refId="Package\Dim Product Category Population\Dim_PC Table.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
                   connectionManagerRefId="Package.ConnectionManagers[infodata16.mbs.tamu.edu.602-Group6-dw-area]"
                   description="The OLE DB runtime connection used to access the database."
@@ -793,127 +683,856 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input]"
+                  refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[CategoryCode]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].Columns[CategoryCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="5"
                       cachedName="CategoryCode"
-                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CategoryCode]" />
+                      externalMetadataColumnId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CategoryCode]" />
                     <inputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[UPC]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].Columns[UPC]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="15"
                       cachedName="UPC"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[UPC]" />
+                      externalMetadataColumnId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[UPC]" />
                     <inputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[CommodityCode]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].Columns[CommodityCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="5"
                       cachedName="CommodityCode"
-                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CommodityCode]" />
+                      externalMetadataColumnId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CommodityCode]" />
                     <inputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].Columns[ProductName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="30"
                       cachedName="ProductName"
-                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ProductName]" />
+                      externalMetadataColumnId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ProductName]" />
                     <inputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[ItemNumber]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].Columns[ItemNumber]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="20"
                       cachedName="ItemNumber"
-                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ItemNumber]" />
+                      externalMetadataColumnId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ItemNumber]" />
                     <inputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].Columns[Manufacturer ID]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].Columns[Manufacturer ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="15"
                       cachedName="Manufacturer ID"
-                      externalMetadataColumnId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ManufacturerID]"
-                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[Manufacturer ID]" />
+                      externalMetadataColumnId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer ID]"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[Manufacturer ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ManufacturerID]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
-                      name="ManufacturerID" />
-                    <externalMetadataColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CategoryCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      length="5"
                       name="CategoryCode" />
                     <externalMetadataColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[CommodityCode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="5"
                       name="CommodityCode" />
                     <externalMetadataColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="15"
                       name="UPC" />
                     <externalMetadataColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[ItemNumber]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="20"
                       name="ItemNumber" />
                     <externalMetadataColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="30"
                       name="ProductName" />
                     <externalMetadataColumn
-                      refId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input].ExternalColumns[PCKey]"
-                      dataType="i4"
-                      name="PCKey" />
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input].ExternalColumns[Manufacturer ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Manufacturer ID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Dim Product Category Population\Dim_PC Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Dim Product Category Population\Dim_PC Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Dim Product Category Population\Dim_PC Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Dim Product Category Population\TempTable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Dim Product Category Population\Dim_PC Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Product Category Population\Merge"
+              componentClassID="Microsoft.Merge"
+              contactInfo="Merge;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple sorted data flows into one sorted data flow. Unlike the Merge Join, all rows flow to the output. For example, combine two sorted lists of customers into a single sorted list. If sorting is not important, use the Union All transformation. "
+              name="Merge"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1]"
+                  name="Merge Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1].Columns[CategoryCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CategoryCode"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CategoryCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CategoryCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="UPC"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[UPC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[UPC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1].Columns[CommodityCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CommodityCode"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CommodityCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CommodityCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1].Columns[ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ProductName"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1].Columns[ItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ItemNumber"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ItemNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ItemNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1].Columns[Manufacturer ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Manufacturer ID"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[Manufacturer ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[Manufacturer ID]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2]"
+                  name="Merge Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2].Columns[CategoryCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CategoryCode"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[CategoryCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CategoryCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="UPC"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[UPC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[UPC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2].Columns[CommodityCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CommodityCode"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[CommodityCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CommodityCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2].Columns[ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ProductName"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[ProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2].Columns[ItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ItemNumber"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[ItemNumber]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ItemNumber]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2].Columns[Manufacturer ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Manufacturer ID"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[Manufacturer ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[Manufacturer ID]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1]"
+                  isSorted="true"
+                  name="Merge Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CategoryCode]"
+                      name="CategoryCode" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[UPC]"
+                      name="UPC"
+                      sortKeyPosition="1" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[CommodityCode]"
+                      name="CommodityCode" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[ItemNumber]"
+                      name="ItemNumber" />
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[Manufacturer ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1].Columns[Manufacturer ID]"
+                      name="Manufacturer ID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Product Category Population\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim Product Category Population\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort.Inputs[Sort Input].Columns[CategoryCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CategoryCode"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort.Inputs[Sort Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="UPC"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort.Inputs[Sort Input].Columns[CommodityCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CommodityCode"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort.Inputs[Sort Input].Columns[ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ProductName"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort.Inputs[Sort Input].Columns[ItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ItemNumber"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort.Inputs[Sort Input].Columns[Manufacturer ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Manufacturer ID"
+                      lineageId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Output].Columns[Manufacturer ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Product Category Population\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[CategoryCode]"
+                      name="CategoryCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[UPC]"
+                      name="UPC"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[CommodityCode]"
+                      name="CommodityCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[ProductName]"
+                      name="ProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[ItemNumber]"
+                      name="ItemNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[Manufacturer ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Dim Product Category Population\Sort.Outputs[Sort Output].Columns[Manufacturer ID]"
+                      name="Manufacturer ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Output].Columns[Manufacturer ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Product Category Population\Sort UPC"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort UPC"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[CategoryCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CategoryCode"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[UPC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="UPC"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[CommodityCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CommodityCode"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[ProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ProductName"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[ItemNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ItemNumber"
+                      lineageId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input].Columns[Manufacturer ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Manufacturer ID"
+                      lineageId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CategoryCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CategoryCode]"
+                      name="CategoryCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CategoryCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[UPC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[UPC]"
+                      name="UPC"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[UPC]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CommodityCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[CommodityCode]"
+                      name="CommodityCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[CommodityCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ProductName]"
+                      name="ProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ItemNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[ItemNumber]"
+                      name="ItemNumber">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output].Columns[ItemNumber]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[Manufacturer ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output].Columns[Manufacturer ID]"
+                      name="Manufacturer ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output].Columns[Manufacturer ID]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -922,25 +1541,45 @@
           </components>
           <paths>
             <path
+              refId="Package\Dim Product Category Population.Paths[Conditional Split Default Output]"
+              endId="Package\Dim Product Category Population\Derived Column 1.Inputs[Derived Column Input]"
+              name="Conditional Split Default Output"
+              startId="Package\Dim Product Category Population\Conditional Split.Outputs[Conditional Split Default Output]" />
+            <path
               refId="Package\Dim Product Category Population.Paths[Derived Column Output]"
               endId="Package\Dim Product Category Population\Sort UPC.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Dim Product Category Population\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dim Product Category Population.Paths[Derived Column Output1]"
+              endId="Package\Dim Product Category Population\Sort.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Dim Product Category Population\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dim Product Category Population.Paths[Merge Output 1]"
+              endId="Package\Dim Product Category Population\Dim_PC Table.Inputs[OLE DB Destination Input]"
+              name="Merge Output 1"
+              startId="Package\Dim Product Category Population\Merge.Outputs[Merge Output 1]" />
             <path
               refId="Package\Dim Product Category Population.Paths[OLE DB Source Output]"
               endId="Package\Dim Product Category Population\Conditional Split.Inputs[Conditional Split Input]"
               name="OLE DB Source Output"
               startId="Package\Dim Product Category Population\Category Staging Table.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Dim Product Category Population.Paths[Sorted Transformed Data]"
-              endId="Package\Dim Product Category Population\TempTable.Inputs[OLE DB Destination Input]"
-              name="Sorted Transformed Data"
+              refId="Package\Dim Product Category Population.Paths[Sort Output]"
+              endId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 1]"
+              name="Sort Output"
               startId="Package\Dim Product Category Population\Sort UPC.Outputs[Sort Output]" />
+            <path
+              refId="Package\Dim Product Category Population.Paths[Sort Output1]"
+              endId="Package\Dim Product Category Population\Merge.Inputs[Merge Input 2]"
+              name="Sort Output"
+              startId="Package\Dim Product Category Population\Sort.Outputs[Sort Output]" />
             <path
               refId="Package\Dim Product Category Population.Paths[UPC Cleaned]"
               endId="Package\Dim Product Category Population\Derived Column.Inputs[Derived Column Input]"
               name="UPC Cleaned"
-              startId="Package\Dim Product Category Population\Conditional Split.Outputs[UPC Cleaned]" />
+              startId="Package\Dim Product Category Population\Conditional Split.Outputs[UPC More than 5 Characters]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1504,7 +2143,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                       refId="Package\Dim StorePriceTier Population\Conditional Split.Inputs[Conditional Split Input].Columns[PriceTier]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="15"
                       cachedName="PriceTier"
                       lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]" />
                   </inputColumns>
@@ -1654,7 +2293,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                       refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input].Columns[SortedPriceTier]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="15"
                       cachedName="SortedPriceTier"
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
@@ -1670,7 +2309,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                       refId="Package\Dim StorePriceTier Population\Dim_StorePriceTier.Inputs[OLE DB Destination Input].ExternalColumns[PriceTier]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="15"
                       name="PriceTier" />
                   </externalMetadataColumns>
                 </input>
@@ -1727,7 +2366,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                       refId="Package\Dim StorePriceTier Population\Sorted PriceTier.Inputs[Sort Input].Columns[PriceTier]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="15"
                       cachedName="PriceTier"
                       lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]">
                       <properties>
@@ -1755,7 +2394,7 @@ Where A.PromotionType in ('', 'B', 'C', 'S')</property>
                       refId="Package\Dim StorePriceTier Population\Sorted PriceTier.Outputs[Sort Output].Columns[SortedPriceTier]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="15"
                       lineageId="Package\Dim StorePriceTier Population\Sorted PriceTier.Outputs[Sort Output].Columns[SortedPriceTier]"
                       name="SortedPriceTier"
                       sortKeyPosition="1">
@@ -1841,7 +2480,7 @@ FROM     Store_Staging</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].ExternalColumns[PriceTier]"
-                      length="10"
+                      length="15"
                       lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].Columns[PriceTier]"
                       name="PriceTier"
                       truncationRowDisposition="FailComponent" />
@@ -1852,7 +2491,7 @@ FROM     Store_Staging</property>
                       refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Output].ExternalColumns[PriceTier]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="15"
                       name="PriceTier" />
                   </externalMetadataColumns>
                 </output>
@@ -1877,7 +2516,7 @@ FROM     Store_Staging</property>
                       refId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[PriceTier]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="15"
                       lineageId="Package\Dim StorePriceTier Population\Store Price Tier Staging.Outputs[OLE DB Source Error Output].Columns[PriceTier]"
                       name="PriceTier" />
                   </outputColumns>
@@ -2750,25 +3389,83 @@ FROM     Store_Staging</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Dim Product Category Population\Conditional Split"
-          TopLeft="245.714289898775,106.294119137794" />
-        <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Dim Product Category Population\Derived Column"
           TopLeft="249.285718531025,201.48235540786" />
         <NodeLayout
-          Size="120,42"
+          Size="144,41.6"
+          Id="Package\Dim Product Category Population\Dim_PC Table"
+          TopLeft="401.928578179709,468.217652796544" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Dim Product Category Population\Category Staging Table"
+          TopLeft="371.928577157916,30.1470587484565" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Dim Product Category Population\Conditional Split"
+          TopLeft="388.571435188761,103.235295565483" />
+        <EdgeLayout
+          Id="Package\Dim Product Category Population.Paths[OLE DB Source Output]"
+          TopLeft="465.850006173338,71.7470587484565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.488236817027"
+              Start="0,0"
+              End="0,23.988236817027">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.988236817027" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Product Category Population.Paths[UPC Cleaned]"
+          TopLeft="441.371435188761,144.835295565483">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.685716657736,56.6470598423766"
+              Start="0,0"
+              End="-115.685716657736,49.1470598423766">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0074212282883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0074212282883"
+                    Point2="0,23.0074212282883"
+                    Point3="-4,23.0074212282883" />
+                  <mssgle:LineSegment
+                    End="-111.685716657736,23.0074212282883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.685716657736,23.0074212282883"
+                    Point2="-115.685716657736,23.0074212282883"
+                    Point3="-115.685716657736,27.0074212282883" />
+                  <mssgle:LineSegment
+                    End="-115.685716657736,49.1470598423766" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-120.809381766368,28.0074212282883,125.933046875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
           Id="Package\Dim Product Category Population\Sort UPC"
           TopLeft="268.571433145173,288.458825577832" />
-        <NodeLayout
-          Size="131,42"
-          Id="Package\Dim Product Category Population\TempTable"
-          TopLeft="265.500004427773,395.417652067264" />
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Dim Product Category Population\Category Staging Table"
-          TopLeft="231.21428904728,30.9117646415341" />
         <EdgeLayout
           Id="Package\Dim Product Category Population.Paths[Derived Column Output]"
           TopLeft="327.128575838099,243.08235540786">
@@ -2791,68 +3488,158 @@ FROM     Store_Staging</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Dim Product Category Population\Sort"
+          TopLeft="520.000008855548,288.317649879423" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Dim Product Category Population\Derived Column 1"
+          TopLeft="491.928579201504,201.229412333116" />
         <EdgeLayout
-          Id="Package\Dim Product Category Population.Paths[UPC Cleaned]"
-          TopLeft="324.3000042149,147.894119137794">
+          Id="Package\Dim Product Category Population.Paths[Conditional Split Default Output]"
+          TopLeft="490.171435188761,144.835295565483">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.5882362700665"
+              EndConnector="78.1571440127431,56.3941167676321"
               Start="0,0"
-              End="0,46.0882362700665">
+              End="78.1571440127431,48.8941167676321">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.0882362700665" />
+                    End="0,18.9046874256229" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.9046874256229"
+                    Point2="0,22.9046874256229"
+                    Point3="4,22.9046874256229" />
+                  <mssgle:LineSegment
+                    End="74.1571440127431,22.9046874256229" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.1571440127431,22.9046874256229"
+                    Point2="78.1571440127431,22.9046874256229"
+                    Point3="78.1571440127431,26.9046874256229" />
+                  <mssgle:LineSegment
+                    End="78.1571440127431,48.8941167676321" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-28.53693359375,18.1696064162833,57.0738671875,9.7490234375"
+              BoundingBox="-31.5353342436285,27.9046874256229,141.2278125,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dim Product Category Population.Paths[Sorted Transformed Data]"
-          TopLeft="329.835718786473,330.058825577832">
+          Id="Package\Dim Product Category Population.Paths[Derived Column Output1]"
+          TopLeft="568.564294028526,242.829412333116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.3588264894325"
+              EndConnector="0,45.4882375463071"
               Start="0,0"
-              End="0,57.8588264894325">
+              End="0,37.9882375463071">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.8588264894325" />
+                    End="0,37.9882375463071" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-56.3690234375,24.0304874634663,112.738046875,9.7978515625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="107.2,41.6"
+          Id="Package\Dim Product Category Population\Merge"
+          TopLeft="422.142864331907,392.894121507955" />
         <EdgeLayout
-          Id="Package\Dim Product Category Population.Paths[OLE DB Source Output]"
-          TopLeft="324.064289473028,72.5117646415341">
+          Id="Package\Dim Product Category Population.Paths[Sort Output]"
+          TopLeft="328.571433145173,330.058825577832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.7823544962596"
+              EndConnector="147.171431186734,62.8352959301229"
               Start="0,0"
-              End="0,26.2823544962596">
+              End="147.171431186734,55.3352959301229">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.2823544962596" />
+                    End="0,27.4176479650614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.4176479650614"
+                    Point2="0,31.4176479650614"
+                    Point3="4,31.4176479650614" />
+                  <mssgle:LineSegment
+                    End="143.171431186734,31.4176479650614" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.171431186734,31.4176479650614"
+                    Point2="147.171431186734,31.4176479650614"
+                    Point3="147.171431186734,35.4176479650614" />
+                  <mssgle:LineSegment
+                    End="147.171431186734,55.3352959301229" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Product Category Population.Paths[Sort Output1]"
+          TopLeft="568.800008855548,329.917649879423">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-76.5238111903071,62.9764716285322"
+              Start="0,0"
+              End="-76.5238111903071,55.4764716285322">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.2302082274558" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.2302082274558"
+                    Point2="0,37.2302082274558"
+                    Point3="-4,37.2302082274558" />
+                  <mssgle:LineSegment
+                    End="-72.5238111903071,37.2302082274558" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-72.5238111903071,37.2302082274558"
+                    Point2="-76.5238111903071,37.2302082274558"
+                    Point3="-76.5238111903071,41.2302082274558" />
+                  <mssgle:LineSegment
+                    End="-76.5238111903071,55.4764716285322" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Product Category Population.Paths[Merge Output 1]"
+          TopLeft="474.835721255808,434.494121507955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.7235312885891"
+              Start="0,0"
+              End="0,26.2235312885891">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2235312885891" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2864,12 +3651,8 @@ FROM     Store_Staging</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelinePath
-    design-time-name="Package\Dim Product Category Population.Paths[Sorted Transformed Data]">
-    <PathAnnotation>PathName</PathAnnotation>
-  </PipelinePath>
   <PipelineComponentMetadata
-    design-time-name="Package\Dim Product Category Population\TempTable">
+    design-time-name="Package\Dim Product Category Population\Dim_PC Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2898,7 +3681,7 @@ FROM     Store_Staging</property>
     design-time-name="Package\Dim Promotion Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Dim Promotion Population\Product Staging Table"
@@ -2934,7 +3717,9 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2956,7 +3741,9 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2978,7 +3765,9 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3131,7 +3920,7 @@ FROM     Store_Staging</property>
     design-time-name="Package\Dim Time Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\Dim Time Population\Sort by Week number"
@@ -3167,7 +3956,9 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3189,7 +3980,9 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3211,7 +4004,9 @@ FROM     Store_Staging</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
